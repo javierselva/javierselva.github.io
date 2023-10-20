@@ -7,6 +7,14 @@
 <h1>Tips n' Tricks</h1>
 <h3>For all those small things I had to spend a couple of afternoons researching <i>to solve a one time thing</i> that I ended up needing to do again some time later and totally forgot how to do</h3>
 
+<h4> Using ghostscript for PDFs</h4>
+Date: 10/18 2021</br></br>
+
+Extract a specific page </br></br>
+
+> gs -sDEVICE=pdfwrite -dNOPAUSE -dBATCH -dSAFER -dFirstPage=22 -dLastPage=36 -sOutputFile=outfile.pdf inputfile.pdf
+
+Add -dNoOutputFonts if text in order to block text from being copied/selected (image-like pdf)
 
 <h4> Set up Authentication GitHub token </h4>
 Date: 10/18 2021</br></br>
