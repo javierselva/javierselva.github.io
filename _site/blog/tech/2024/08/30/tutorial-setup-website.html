@@ -64,39 +64,6 @@
 
 
   
-
-    <!-- Cookie Consent by TermsFeed https://www.TermsFeed.com -->
-    <script type="text/javascript" src="https://www.termsfeed.com/public/cookie-consent/4.1.0/cookie-consent.js" charset="UTF-8"></script>
-
-    <script type="text/javascript" charset="UTF-8">
-      document.addEventListener("DOMContentLoaded", function () {
-        cookieconsent.run({
-          notice_banner_type: "simple",
-          consent_type: "express",
-          palette: "light",
-          language: "en",
-          page_load_consent_levels: ["strictly-necessary"],
-          notice_banner_reject_button_hide: false,
-          preferences_center_close_button_hide: false,
-          page_refresh_confirmation_buttons: false,
-          website_name: "http://localhost:4000",
-        });
-      });
-    </script>
-
-    <!-- Google Analytics -->
-
-    <script type="text/plain" data-cookie-consent="tracking" async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXX-X"></script>
-    <script type="text/plain" data-cookie-consent="tracking">
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-XXXXXXXX-X');
-    </script>
-
-    <!-- Google Analytics -->
-
-  
 </head>
 
 <!-- HEAD End -->
@@ -129,17 +96,17 @@
         
           <li>
             </li>
-<li> <a href="http://localhost:4000/publications"> Papers </a> </li>
+<li> <a href="http://localhost:4000/publications/"> Papers </a> </li>
           
         
           <li>
             </li>
-<li> <a href="http://localhost:4000/blog"> Blog </a> </li>
+<li> <a href="http://localhost:4000/blog/"> Blog </a> </li>
           
         
           <li>
             </li>
-<li> <a href="http://localhost:4000/about"> About </a> </li>
+<li> <a href="http://localhost:4000/about/"> About </a> </li>
           
         
         <li> </li>
@@ -248,6 +215,12 @@ away from knowing how to deal with styles and css. So I headed into <a href="htt
 keywords like “personal”, “academic” and so on. After too much pondering, I went for <a href="https://le4ker.github.io/personal-jekyll-theme/">Le4ker’s Theme</a>. If you have not yet created your page’s repo you can directly fork the github repository containing the theme you like, rename it to be <code class="language-plaintext highlighter-rouge">yourdomain.github.io</code> and work from there. I had already created my repo and domain, and after a bit of googling I didn’t seem to find a way to migrate that to a different repository, so I just downloaded it as a zip file and replaced my original repo contents with that.</p>
 
 <p>Once it is on your computer, either by downloading or cloning, you have to install the plugins for that theme. You simply go into the folder containing the theme and run <code class="language-plaintext highlighter-rouge">bundle install</code>. As usual, you fight with some or other package dependency and problematic folder permission issues, but stack-overflow is your friend. Once that is done you can start working on your site.</p>
+
+<p>Just in case you ran into the same permission issues I had, I solved it by simply exporting an appropriate path where bundle files could be installed (somewhere within my home directory):</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">BUNDLE_PATH</span><span class="o">=</span>~/path/to/bundle/install/dir/
+bundle <span class="nb">install</span>
+</code></pre></div></div>
 
 <h2 id="jekylls-basics">Jekyll’s Basics.</h2>
 
@@ -358,6 +331,24 @@ keywords like “personal”, “academic” and so on. After too much pondering
 
 <p>And that mostly sums up the basics of building your page with Jeckyll. There are other interesting issues to address, such as handling pagination when handling multiple posts. But I’ll leave those for a future post.</p>
 
+<h2 id="deploy-the-site-to-github">Deploy the site to GitHub</h2>
+<p>Finally, the moment has come! Your website looks awesome and is time for everyone to see. Once you’ve done all of the above (make sure the gemfile was generated, and that you ran <code class="language-plaintext highlighter-rouge">bundle install</code>) you can start the process of uploading it to your repository.</p>
+
+<p>For this process, I followed <a href="https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll">this guide</a>. First of all, you need to edit the Gemfile, remove everything contained in it and repace its contents by:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>source 'https://rubygems.org'
+gem 'github-pages'
+</code></pre></div></div>
+
+<p>Remember to add <code class="language-plaintext highlighter-rouge">Gemfile.lock</code> to .gitignore. Finally, simply add all to git and push.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add --all
+git commit -m 'first jekyll site commit'
+git push
+</code></pre></div></div>
+
+<p>And that’s it!! Now you’re all set and can start focusing on creating new content for your blog!!</p>
+
           </section>
 
           <!-- Share Buttons Start -->
@@ -401,7 +392,7 @@ keywords like “personal”, “academic” and so on. After too much pondering
 
     
       <li class="rrssb-linkedin">
-        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000http://localhost:4000/blog/tech/2024/08/30/tutorial-setup-website.html" class="popup">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://localhost:4000http://localhost:4000/blog/tech/2024/08/30/tutorial-setup-website.html" class="popup">
           <span class="rrssb-icon">
             <svg xmlns="https://www.w3.org/2000/svg" width="28" height="28" viewbox="0 0 28 28">
               <path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"></path>
