@@ -154,12 +154,13 @@ And that mostly sums up the basics of building your page with Jeckyll. There are
 ## Deploy the site to GitHub
 Finally, the moment has come! Your website looks awesome and is time for everyone to see. Once you've done all of the above (make sure the gemfile was generated, and that you ran `bundle install`) you can start the process of uploading it to your repository.
 
-For this process, I followed [this guide](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll). First of all, you need to edit the Gemfile, remove everything contained in it and repace its contents by:
+For this process, I followed [this guide](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll). First of all, you need to edit the Gemfile to add github support by ading:
 
 ```
 source 'https://rubygems.org'
 gem 'github-pages'
 ```
+(The first line may already be there, in which case you do not need to add it). After that, you need to re-run `bundle install` so the github-pages package is properly installed. In my case, this caused some dependency issues: my Gemfile included some specific versions for different libraries such that they will allow for the site to work, but none of those seemed compatible with github-pages. So I removed the versions for all packages and let bundle figure it out. I may regret this down the line, but so far it seems like everything is working as expected.
 
 Remember to add `Gemfile.lock` to .gitignore. Finally, simply add all to git and push.
 
