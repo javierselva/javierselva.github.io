@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<!-- Post Layout Start --><html lang="en">
+  <!-- HEAD Start -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Website and blog of Javier Selva.">
+  <meta name="author" content="Javier Selva">
+  <meta name="keywords" content="selva, javier, personal, academic, ai, research, deep learning, machine learning">
+  <link rel="canonical" href="/blog/tech/2024/08/30/tutorial-setup-website.html">
+  <title>Javier Selva's Personal Site | Setting up your site with Jekyll.</title>
+
+  <!-- CSS links -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet" integrity="sha512-pli9aKq758PMdsqjNA+Au4CJ7ZatLCCXinnlSfv023z4xmzl8s+Jbj2qNR7RI8DsxFp5e8OvbYGDACzKntZE9w==" crossorigin="anonymous" defer>
+  <link href="http://localhost:4000/css/grayscale.css" rel="stylesheet">
+
+  
+
+  
+    
+      <link rel="stylesheet" type="text/css" href="http://localhost:4000/css/everforest.css">
+    
+    <link rel="stylesheet" href="http://localhost:4000/css/rrssb.css">
+  
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&amp;display=swap" rel="stylesheet" defer>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" defer>
+
+  
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost:4000/assets/img/favicon.ico">
+  
+
+  
+
+  
+
+<!-- iOS Web App mode -->
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="apple-touch-icon" sizes="36x36" href="http://localhost:4000">
+<link rel="apple-touch-icon" sizes="48x48" href="http://localhost:4000">
+<link rel="apple-touch-icon" sizes="72x72" href="http://localhost:4000">
+<link rel="apple-touch-icon" sizes="96x96" href="http://localhost:4000">
+<link rel="apple-touch-icon" sizes="144x144" href="http://localhost:4000">
+<link rel="apple-touch-icon" sizes="192x192" href="http://localhost:4000">
+
+<!-- Android Web App mode -->
+
+<link rel="manifest" href="http://localhost:4000/manifest.json">
+
+
+
+
+  <!-- Chrome, Firefox OS and Opera -->
+<meta name="theme-color" content="#000000">
+<!-- iOS Safari -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+
+  
+
+    <!-- Cookie Consent by TermsFeed https://www.TermsFeed.com -->
+    <script type="text/javascript" src="https://www.termsfeed.com/public/cookie-consent/4.1.0/cookie-consent.js" charset="UTF-8"></script>
+
+    <script type="text/javascript" charset="UTF-8">
+      document.addEventListener("DOMContentLoaded", function () {
+        cookieconsent.run({
+          notice_banner_type: "simple",
+          consent_type: "express",
+          palette: "light",
+          language: "en",
+          page_load_consent_levels: ["strictly-necessary"],
+          notice_banner_reject_button_hide: false,
+          preferences_center_close_button_hide: false,
+          page_refresh_confirmation_buttons: false,
+          website_name: "http://localhost:4000",
+        });
+      });
+    </script>
+
+    <!-- Google Analytics -->
+
+    <script type="text/plain" data-cookie-consent="tracking" async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXX-X"></script>
+    <script type="text/plain" data-cookie-consent="tracking">
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-XXXXXXXX-X');
+    </script>
+
+    <!-- Google Analytics -->
+
+  
+</head>
+
+<!-- HEAD End -->
+
+
+  <body>
+    
+<!-- Navigation Start -->
+
+<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+        <i class="fa fa-bars"></i>
+      </button>
+      
+        <a class="navbar-brand" href="http://localhost:4000/">
+      
+          <div>
+            
+              <img src="http://localhost:4000/assets/img/computer.ico" alt="">
+            
+            Javier Selva Castelló
+          </div>
+        </a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+      <ul class="nav navbar-nav">
+        
+          <li>
+            </li>
+<li> <a href="http://localhost:4000/publications"> Papers </a> </li>
+          
+        
+          <li>
+            </li>
+<li> <a href="http://localhost:4000/blog"> Blog </a> </li>
+          
+        
+          <li>
+            </li>
+<li> <a href="http://localhost:4000/about"> About </a> </li>
+          
+        
+        <li> </li>
+        <li>
+<!-- Social Buttons Start -->
+
+<ul class="list-inline social-buttons">
+  
+    
+      <li>
+        <a href="https://twitter.com/javier_selvac" target="_blank">
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="https://github.com/javierselva" target="_blank">
+          <i class="fa-brands fa-github"></i>
+        </a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="https://www.linkedin.com/in/javier-selva-castell%C3%B3-399738134/" target="_blank">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="https://scholar.google.com/citations?user=T5-DYyUAAAAJ" target="_blank">
+          <i class="fa-brands fa-google-scholar"></i>
+        </a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="https://www.youtube.com/@javierselva509/featured" target="_blank">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+      </li>
+    
+  
+</ul>
+
+<!-- Social Buttons End -->
+</li>
+      </ul> 
+    </div>
+  </div>
+</nav>
+
+<!-- Navigation End -->
+
+
+    <section id="post" class="container content-section text-center">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <h1><strong>Setting up your site with Jekyll.</strong></h1>
+          <h4>
+            <strong>30 Aug 2024</strong>
+            <small>
+              .
+              <a class="category" href="http://localhost:4000/categories/tech.html">
+                tech </a>.
+              
+              <br>
+              
+              <a class="tag" href="http://localhost:4000/tags/tutorial.html">#tutorial</a>
+              
+            </small>
+          </h4>
+
+          <section class="text-justify">
+            <p>I recently migrated my simple website (a single plain .html you can see below) into something a bit more stylish.</p>
+<figure>
+    <img src="/assets/img/blog/old-site.png" alt="A black background image showing a website. There is a picture of a white man smiling, and a list of published papers below, each accompanied by a diagram" style="border-width: 100px; border-color: white;">
+    <figcaption><em>A glance of what the old website looked like.</em></figcaption>
+</figure>
+
+<p>I also wanted to start a blog where I could post about the papers I read or the things I learn.
+To do that, I was going to need a way to use some templates that would ease the publication process, 
+so I could focus on just creating the content, which is already quite a bit of work.</p>
+
+<p>Reading up a bit, turns out you can create these sorts of <em>dynamic</em> websites using <a href="https://jekyllrb.com/">Jekyll</a>. And I emphasize
+<em>dynamic</em> because what you’re actually doing is compiling your dynamic website into a <strong>static</strong> one that then 
+you can upload to your <a href="https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll">github page</a>.</p>
+
+<p>It is frankly easy to set up.</p>
+
+<h2 id="first-you-need-to-install-jekyll">First you need to install Jekyll.</h2>
+
+<p>You should probably follow the <a href="https://jekyllrb.com/docs/installation/">installation guides on the official website</a>. I actually missed those and ended up installing it using <code class="language-plaintext highlighter-rouge">apt install</code> which throws a bunch of permission errors when trying to use the tool later on. I had to install the theme’s dependencies on a folder in the <code class="language-plaintext highlighter-rouge">/home</code> directory instead of within the package folder.</p>
+
+<p>Installing using <code class="language-plaintext highlighter-rouge">gem</code> instead should be better for you, as most solutions I found to solve my issues pointed to using <code class="language-plaintext highlighter-rouge">gem</code> command to solve them. Which I couldn’t do as I installed it using <code class="language-plaintext highlighter-rouge">apt</code>.</p>
+
+<h2 id="then-you-find-a-theme-you-like">Then you find a theme you like.</h2>
+
+<p>You can also start your site from scratch, if that’s your kind of thing. I know my way around web development but I am far (very far) 
+away from knowing how to deal with styles and css. So I headed into <a href="https://jekyll-themes.com/">Jekyll Themes</a> and searched around for some 
+keywords like “personal”, “academic” and so on. After too much pondering, I went for <a href="https://le4ker.github.io/personal-jekyll-theme/">Le4ker’s Theme</a>. If you have not yet created your page’s repo you can directly fork the github repository containing the theme you like, rename it to be <code class="language-plaintext highlighter-rouge">yourdomain.github.io</code> and work from there. I had already created my repo and domain, and after a bit of googling I didn’t seem to find a way to migrate that to a different repository, so I just downloaded it as a zip file and replaced my original repo contents with that.</p>
+
+<p>Once it is on your computer, either by downloading or cloning, you have to install the plugins for that theme. You simply go into the folder containing the theme and run <code class="language-plaintext highlighter-rouge">bundle install</code>. As usual, you fight with some or other package dependency and problematic folder permission issues, but stack-overflow is your friend. Once that is done you can start working on your site.</p>
+
+<h2 id="jekylls-basics">Jekyll’s Basics.</h2>
+
+<p>You’ve got your htmls, your layouts, your imports, and your posts. I recommend giving a quick read to the <a href="https://jekyllrb.com/docs/pages/">quickstart documentation</a> (particularly the posts under <strong>Content</strong> and <strong>Site structure</strong>) to get a quick idea of the basics. It won’t take you more than an hour.</p>
+
+<p>As a quick summary, you’ve got:</p>
+
+<ul>
+  <li>The <strong>config.yaml</strong> file, which includes all relevant variables for the site, such as the title, the author and other relevant information Jekyll (or you) can use to build the site.</li>
+  <li>
+<strong>Includes</strong>. These are things such as headers, navigation bars, formatted posts… and other .html templates that you expect to reuse. Similarly, in the template I am using, you have got here things like a list of blog posts or publications to be <em>included</em> within the home-page.</li>
+  <li>
+<strong>Layouts</strong>. These are the main <code class="language-plaintext highlighter-rouge">.html</code> structure of the different pages in your site. They define the main html for the sections, blog posts, etc. Both layouts and includes make use of <a href="https://shopify.github.io/liquid/basics/introduction/">Liquid templating language</a> to include the dynamic content, either through plain variables such as <code class="language-plaintext highlighter-rouge">Setting up your site with Jekyll.</code> or more complex instructions such as <code class="language-plaintext highlighter-rouge">if</code> or <code class="language-plaintext highlighter-rouge">for</code> statements.</li>
+  <li>
+<strong>Content</strong>. These can take the form of <code class="language-plaintext highlighter-rouge">.md</code> or <code class="language-plaintext highlighter-rouge">.html</code> files, and include a header, also known as front matter, which is metadata used when creating pages. For instance, the home site within index.html has a header indicating that it uses the <code class="language-plaintext highlighter-rouge">index</code> layout, and everything following the front matter will get included within that layout wherever the <code class="language-plaintext highlighter-rouge">{{ content }}</code> variable is invoked. This is also used to build blog posts, as each post will have a set of metadata, such as the category, layout and tags, all included within the front matter, followed by the actual contents of the file.</li>
+</ul>
+
+<p>Less important to know, but also relevant:</p>
+<ul>
+  <li>A <strong>css</strong> folder where you’ll store all your styles for the site.</li>
+  <li>An <strong>assets</strong> folder, where you’ll store all images and other relevant files (e.g., I’ve got some pdfs).</li>
+  <li>A <strong>_site</strong> folder, which will store the final site once you compile the dynamic website through Jekyll.</li>
+</ul>
+
+<h2 id="creating-multiple-blogs">Creating multiple blogs.</h2>
+<p>Normally, there’s a default blog for Jekyll sites. You simply create a blog and post layouts, and then create a <code class="language-plaintext highlighter-rouge">_posts</code> folder where you place all your posts in the form of .md files, written in markdown. However, I wanted to have something similar to multiple blogs, as I wanted one that would allow me to add new publications as if they were posts.</p>
+
+<p>For that I followed <a href="https://www.garron.me/en/blog/multi-blog-site-jekyll.html">this tutorial</a>, but instead of using categories as the telling variable to separate posts from one blog and the other, as I was going to use different layouts for each, I decided to use that variable to tell apart the posts when listing them in the different blog/publication sections. Something like this:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+{% for post in site.posts %}
+    {% if post.layout == "paper" %}
+        {% include paper-list.html%} 
+    {% endif %}
+{% endfor %}
+
+</code></pre></div></div>
+<p>Note that here, the included <code class="language-plaintext highlighter-rouge">paper-list.html</code> represents just an element in said list. In this manner, I make sure that every post I am trying to include in the list is one publication, and not a random blog post.</p>
+
+<p>Other than that, you simply create one folder for each blog, and an individual <code class="language-plaintext highlighter-rouge">_posts</code> folder in each.</p>
+
+<h2 id="writing-posts">Writing posts</h2>
+<p>Posts are created in <code class="language-plaintext highlighter-rouge">markdown</code> (as you do for github readme pages). While you can also use html for this purpose I find doing it in markdown helps me focus on the actual contents without worrying about the proper formatting and all tags in html. You can find some basics on how to write these posts <a href="https://www.markdownguide.org/basic-syntax/">here</a>. For this blog it is more than fine. You just write the content formatting it appropriately and it will later get translated into the proper html.</p>
+
+<p>However, for my publications I needed to play a little bit with the cards Jekyll was dealing me. There are probably more elegant solutions but this is what I came up with. When including a publication, I create a new .md file, the contents of which are only the abstract (or in my case, a short version of the abstract) for that paper, and everything else (authors, publication year, conference, links…) are included as part of the front matter. One example of front matter I use is the following:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">paper</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">Folded Recurrent Neural Networks for Future Video Prediction</span>
+<span class="na">category</span><span class="pi">:</span> <span class="s">publications</span>
+<span class="na">tags</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">paper"</span><span class="pi">,</span><span class="s2">"</span><span class="s">rnn"</span><span class="pi">,</span><span class="s2">"</span><span class="s">frnn"</span><span class="pi">,</span><span class="s2">"</span><span class="s">cnn"</span><span class="pi">,</span><span class="s2">"</span><span class="s">frame</span><span class="nv"> </span><span class="s">prediction"</span><span class="pi">,</span><span class="s2">"</span><span class="s">video"</span><span class="pi">]</span>
+<span class="na">conference</span><span class="pi">:</span> <span class="s2">"</span><span class="s">ECCV</span><span class="nv"> </span><span class="s">2018"</span>
+<span class="na">authors</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">Marc</span><span class="nv"> </span><span class="s">Oliu"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">Javier</span><span class="nv"> </span><span class="s">Selva"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">Sergio</span><span class="nv"> </span><span class="s">Escalera"</span><span class="pi">]</span>
+<span class="na">links</span><span class="pi">:</span>
+  <span class="na">PDF</span><span class="pi">:</span> <span class="s2">"</span><span class="s">https://openaccess.thecvf.com/content_ECCV_2018/papers/Marc_Oliu_Folded_Recurrent_Neural_ECCV_2018_paper.pdf"</span>
+  <span class="na">Supp</span><span class="pi">:</span> <span class="s2">"</span><span class="s">none"</span>
+  <span class="na">arXiv</span><span class="pi">:</span> <span class="s2">"</span><span class="s">https://arxiv.org/abs/1712.00311"</span>
+  <span class="na">Code</span><span class="pi">:</span> <span class="s2">"</span><span class="s">https://github.com/moliusimon/frnn"</span>
+  <span class="na">Website</span><span class="pi">:</span> <span class="s2">"</span><span class="s">none"</span>
+<span class="na">bibtex</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">@inproceedings{oliu2018folded,"</span><span class="pi">,</span><span class="s2">"</span><span class="s">title={Folded</span><span class="nv"> </span><span class="s">recurrent</span><span class="nv"> </span><span class="s">neural</span><span class="nv"> </span><span class="s">networks</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">future</span><span class="nv"> </span><span class="s">video</span><span class="nv"> </span><span class="s">prediction},"</span><span class="pi">,</span><span class="s2">"</span><span class="s">author={Oliu,</span><span class="nv"> </span><span class="s">Marc</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">Selva,</span><span class="nv"> </span><span class="s">Javier</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">Escalera,</span><span class="nv"> </span><span class="s">Sergio},"</span><span class="pi">,</span><span class="s2">"</span><span class="s">booktitle={Proceedings</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">European</span><span class="nv"> </span><span class="s">Conference</span><span class="nv"> </span><span class="s">on</span><span class="nv"> </span><span class="s">Computer</span><span class="nv"> </span><span class="s">Vision</span><span class="nv"> </span><span class="s">(ECCV)},"</span><span class="pi">,</span><span class="s2">"</span><span class="s">pages={716--731},"</span><span class="pi">,</span><span class="s2">"</span><span class="s">year={2018}"</span><span class="pi">,</span><span class="s2">"</span><span class="s">}"</span><span class="pi">]</span>
+<span class="na">image</span><span class="pi">:</span> <span class="s2">"</span><span class="s">frnn.png"</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+
+<p>You can create as many variables as you need and then reference them from the html templates. The liquid templating that I use to translate that into the final site you see (the <code class="language-plaintext highlighter-rouge">paper-list.html</code> I reference above) looks something like this:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"display: flex;"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"/assets/img/papers/{{ post.image }}"</span> <span class="na">style=</span><span class="s">"max-width: 100%; height: 100%; flex: 0 0 auto; margin: 0 10px 0 0;"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+    ({{ post.conference }}) 
+    <span class="nt">&lt;h2&gt;&lt;b&gt;</span>{{ post.title }}<span class="nt">&lt;/b&gt;&lt;/h2&gt;&lt;br/&gt;</span> 
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+{% for author in post.authors %} 
+    {% if forloop.index == forloop.length %}
+        and 
+    {% endif %}
+    {{ author }}
+    {% unless forloop.index == forloop.length %}
+        , 
+    {% endunless %}
+{% endfor %}
+.
+<span class="nt">&lt;br/&gt;</span> 
+{% for link in post.links %}
+    {% unless link[1] == "none"%}
+        [<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"{{ link[1] }}"</span> <span class="na">target=</span><span class="s">"blank"</span><span class="nt">&gt;</span>{{ link[0] }}<span class="nt">&lt;/a&gt;</span>] 
+    {% endunless %}
+{% endfor %}
+<span class="nt">&lt;br/&gt;</span>
+<span class="nt">&lt;em&gt;</span>{{ post.content }}<span class="nt">&lt;/em&gt;</span> 
+<span class="nt">&lt;details&gt;&lt;summary&gt;</span>↓[Bibtex]↓<span class="nt">&lt;/summary&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"background-color:#444444;"</span><span class="nt">&gt;</span>
+    {% for b_line in post.bibtex %}
+        {% unless forloop.index == 1 or forloop.index == forloop.length %}
+            <span class="ni">&amp;emsp;</span>
+        {% endunless %}
+    {{ b_line }} <span class="nt">&lt;br/&gt;</span> 
+    {% endfor %}
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;/details&gt;</span>
+<span class="nt">&lt;br/&gt;</span>
+<span class="nt">&lt;hr</span> <span class="na">style=</span><span class="s">"border-color: white; border-width: 1px; margin: 10px 0;"</span><span class="nt">&gt;</span>
+
+</code></pre></div></div>
+
+<p>And that mostly sums up the basics of building your page with Jeckyll. There are other interesting issues to address, such as handling pagination when handling multiple posts. But I’ll leave those for a future post.</p>
+
+          </section>
+
+          <!-- Share Buttons Start -->
+<div>
+  <ul class="rrssb-buttons clearfix">
+    
+      <li class="rrssb-email">
+        <a href="mailto:?subject=Setting%20up%20your%20site%20with%20Jekyll.&amp;body=http://localhost:4000http://localhost:4000/blog/tech/2024/08/30/tutorial-setup-website.html" data-proofer-ignore>
+          <span class="rrssb-icon">
+            <svg xmlns="https://www.w3.org/2000/svg" width="28" height="28" viewbox="0 0 28 28">
+              <path d="M20.11 26.147c-2.335 1.05-4.36 1.4-7.124 1.4C6.524 27.548.84 22.916.84 15.284.84 7.343 6.602.45 15.4.45c6.854 0 11.8 4.7 11.8 11.252 0 5.684-3.193 9.265-7.398 9.3-1.83 0-3.153-.934-3.347-2.997h-.077c-1.208 1.986-2.96 2.997-5.023 2.997-2.532 0-4.36-1.868-4.36-5.062 0-4.75 3.503-9.07 9.11-9.07 1.713 0 3.7.4 4.6.972l-1.17 7.203c-.387 2.298-.115 3.3 1 3.4 1.674 0 3.774-2.102 3.774-6.58 0-5.06-3.27-8.994-9.304-8.994C9.05 2.87 3.83 7.545 3.83 14.97c0 6.5 4.2 10.2 10 10.202 1.987 0 4.09-.43 5.647-1.245l.634 2.22zM16.647 10.1c-.31-.078-.7-.155-1.207-.155-2.572 0-4.596 2.53-4.596 5.53 0 1.5.7 2.4 1.9 2.4 1.44 0 2.96-1.83 3.31-4.088l.592-3.72z"></path>
+            </svg>
+          </span>
+          <span class="rrssb-text">email</span>
+        </a>
+      </li>
+    
+
+    
+      <li class="rrssb-facebook">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000http://localhost:4000/blog/tech/2024/08/30/tutorial-setup-website.html&amp;title=Setting%20up%20your%20site%20with%20Jekyll." class="popup">
+          <span class="rrssb-icon">
+            <svg xmlns="https://www.w3.org/2000/svg" preserveaspectratio="xMidYMid" width="29" height="29" viewbox="0 0 29 29">
+              <path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z" class="cls-2" fill-rule="evenodd"></path>
+            </svg>
+          </span>
+          <span class="rrssb-text">facebook</span>
+        </a>
+      </li>
+    
+
+    
+      <li class="rrssb-twitter">
+        <a href="https://twitter.com/share?url=http://localhost:4000http://localhost:4000/blog/tech/2024/08/30/tutorial-setup-website.html&amp;text=Setting%20up%20your%20site%20with%20Jekyll." class="popup">
+          <span class="rrssb-icon"><svg xmlns="https://www.w3.org/2000/svg" width="28" height="28" viewbox="0 0 28 28">
+              <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"></path></svg></span>
+          <span class="rrssb-text">twitter</span>
+        </a>
+      </li>
+    
+
+    
+      <li class="rrssb-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000http://localhost:4000/blog/tech/2024/08/30/tutorial-setup-website.html" class="popup">
+          <span class="rrssb-icon">
+            <svg xmlns="https://www.w3.org/2000/svg" width="28" height="28" viewbox="0 0 28 28">
+              <path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"></path>
+            </svg>
+          </span>
+          <span class="rrssb-text">linkedin</span>
+        </a>
+      </li>
+    
+
+    
+      <li class="rrssb-reddit">
+        <a href="https://www.reddit.com/submit?url=http://localhost:4000http://localhost:4000/blog/tech/2024/08/30/tutorial-setup-website.html&amp;title=Setting%20up%20your%20site%20with%20Jekyll." target="_blank">
+          <span class="rrssb-icon">
+            <svg xmlns="https://www.w3.org/2000/svg" width="28" height="28" viewbox="0 0 28 28">
+              <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"></path>
+              <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"></path>
+            </svg>
+          </span>
+          <span class="rrssb-text">reddit</span>
+        </a>
+      </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+  </ul>
+</div>
+
+<!-- Share Buttons End -->
+ <!-- Disqus Comments Start -->
+
+
+  <div id="disqus_thread"></div>
+  <noscript>Please enable JavaScript to view the
+    <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+  </noscript>
+
+
+<!-- Disqus Comments End -->
+
+
+          <hr>
+
+          
+          <div class="author row">
+            <img class="col-xs-4 col-sm-3 col-md-2" src="http://localhost:4000/assets/img/me.png" alt="Me">
+            <p class="col-xs-8 col-sm-9 col-md-10">Javier Selva has a background of computer science and currently specializes in Machine Learning. In particular he is passionate about NLP, CV and self-supervised learning with Transformers.</p>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Start -->
+
+<footer>
+  <!-- Social Buttons Start -->
+
+<ul class="list-inline social-buttons">
+  
+    
+      <li>
+        <a href="https://twitter.com/javier_selvac" target="_blank">
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="https://github.com/javierselva" target="_blank">
+          <i class="fa-brands fa-github"></i>
+        </a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="https://www.linkedin.com/in/javier-selva-castell%C3%B3-399738134/" target="_blank">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="https://scholar.google.com/citations?user=T5-DYyUAAAAJ" target="_blank">
+          <i class="fa-brands fa-google-scholar"></i>
+        </a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="https://www.youtube.com/@javierselva509/featured" target="_blank">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+      </li>
+    
+  
+</ul>
+
+<!-- Social Buttons End -->
+
+
+  <div class="container text-center">
+    <p>Copyright © Javier Selva 2024</p>
+    <p><a href="https://github.com/le4ker/personal-jekyll-theme/" target="blank">Site's theme.</a></p>
+  </div>
+</footer>
+
+<!-- Footer End -->
+ <!-- Javascript Start -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js" integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ==" crossorigin="anonymous">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha512-oBTprMeNEKCnqfuqKd6sbvFzmFQtlXS3e0C/RGFV0hD6QzhHV+ODfaQbAlmY6/q0ubbwlAM/nCJjkrgA3waLzg==" crossorigin="anonymous">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" integrity="sha512-ahmSZKApTDNd3gVuqL5TQ3MBTj8tL5p2tYV05Xxzcfu6/ecvt1A0j6tfudSGBVuteSoTRMqMljbfdU0g2eDNUA==" crossorigin="anonymous">
+</script>
+
+<!--
+  * Start Bootstrap - Grayscale Bootstrap Theme (http://startbootstrap.com)
+  * Code licensed under the Apache License v2.0.
+  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+-->
+<script>
+  function toggleNavCollapse() {
+    50 < $(".navbar").offset().top
+      ? $(".navbar-fixed-top").addClass("top-nav-collapse")
+      : $(".navbar-fixed-top").removeClass("top-nav-collapse");
+  }
+  $(document).ready(toggleNavCollapse);
+  $(window).scroll(toggleNavCollapse);
+  $(function () {
+    $("a.page-scroll").bind("click", function (b) {
+      var a = $(this);
+      $("html, body")
+        .stop()
+        .animate(
+          { scrollTop: $(a.attr("href")).offset().top - 50 },
+          1500,
+          "easeInOutExpo",
+          function () {
+            a.blur();
+          },
+        );
+      b.preventDefault();
+    });
+  });
+  $(".navbar-collapse ul li a").click(function () {
+    $(".navbar-toggle:visible").click();
+  });
+</script>
+
+
+
+
+<!--
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+-->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script” async src=”https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+
+ 
+
+   
+
+  
+
+
+
+<!-- Javascript End -->
+
+  </body>
+</html><!-- Post Layout End -->

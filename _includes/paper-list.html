@@ -1,0 +1,47 @@
+<!-- Post List Start -->
+    
+    <div style="display: flex;">
+      <img src="/assets/img/papers/{{ post.image }}" style="max-width: 100%; height: 100%; flex: 0 0 auto; margin: 0 10px 0 0;">
+      <div>
+        ({{ post.conference }}) 
+        <h2><b>{{ post.title }}</b></h2><br></br> 
+
+      </div>
+
+    </div>
+    {% for author in post.authors %} 
+      {% if forloop.index == forloop.length %}
+         and 
+      {% endif %}
+      {% if author contains "Javier Selva" %}
+        <b> {{ author }}</b>
+      {% else %}
+        {{ author }}
+      {% endif %}
+      {% unless forloop.index == forloop.length %}
+       , 
+      {% endunless %}
+    {% endfor %}
+    .
+    <br></br> 
+    {% for link in post.links %}
+      {% unless link[1] == "none"%}
+      [<a href="{{ link[1] }}" target="blank">{{ link[0] }}</a>] 
+      {% endunless %}
+    {% endfor %}
+    <br/>
+    <em>{{ post.content }}</em> 
+    <details><summary>↓[Bibtex]↓</summary>
+    <div style="background-color:#444444;">
+      {% for b_line in post.bibtex %}
+        {% unless forloop.index == 1 or forloop.index == forloop.length %}
+          &emsp;
+        {% endunless %}
+        {{ b_line }} <br></br> 
+      {% endfor %}
+    </div>
+
+    </details>
+    <br/>
+    <hr style="border-color: white; border-width: 1px; margin: 10px 0;">
+<!-- Post List End -->

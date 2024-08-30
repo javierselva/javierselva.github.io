@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<channel>
+		<title>Javier Selva Castelló</title>
+		<description>Website and blog of Javier Selva.</description>
+		<link>http://localhost:4000http://localhost:4000</link>
+		<atom:link href="http://localhost:4000http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+		
+			<item>
+				<title>Setting up your site with Jekyll.</title>
+				
+				
+					<description>&lt;p&gt;I recently migrated my simple website (a single plain .html you can see below) into something a bit more stylish.&lt;/p&gt;
+&lt;figure&gt;
+    &lt;img src=&quot;/assets/img/blog/old-site.png&quot; alt=&quot;A black background image showing a website. There is a picture of a white man smiling, and a list of published papers below, each accompanied by a diagram&quot; style=&quot;border-width: 100px; border-color: white;&quot; /&gt;
+    &lt;figcaption&gt;&lt;em&gt;A glance of what the old website looked like.&lt;/em&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+</description>
+				
+				<pubDate>Fri, 30 Aug 2024 00:00:00 +0200</pubDate>
+				<link>http://localhost:4000http://localhost:4000/blog/tech/2024/08/30/tutorial-setup-website.html</link>
+				<guid isPermaLink="true">http://localhost:4000http://localhost:4000/blog/tech/2024/08/30/tutorial-setup-website.html</guid>
+			</item>
+		
+			<item>
+				<title>Video Transformers: A Survey</title>
+				
+				
+					<description>&lt;p&gt;In this survey, we analyze the main contributions and trends of works leveraging Transformers to model video. Specifically, we delve into how videos are handled at the input level first. Then, we study the architectural changes made to deal with video more efficiently, reduce redundancy, re-introduce useful inductive biases, and capture long-term temporal dynamics. In addition, we provide an overview of different training regimes and explore effective self-supervised learning strategies for video. Finally, we conduct a performance comparison on the most common benchmark for Video Transformers (i.e., action classification), finding them to outperform 3D ConvNets even with less computational complexity.&lt;/p&gt;
+</description>
+				
+				<pubDate>Sun, 01 Jan 2023 00:00:00 +0100</pubDate>
+				<link>http://localhost:4000http://localhost:4000/publications/publication/2023/01/01/vt-survey.html</link>
+				<guid isPermaLink="true">http://localhost:4000http://localhost:4000/publications/publication/2023/01/01/vt-survey.html</guid>
+			</item>
+		
+			<item>
+				<title>Dyadformer: A Multi-modal Transformer for Long-Range Modeling of Dyadic Interactions</title>
+				
+				
+					<description>&lt;p&gt;We present the Dyadformer, a novel multi-modal multi-subject Transformer architecture to model individual and interpersonal features in dyadic interactions using variable time windows, thus allowing the capture of long-term interdependencies. Our proposed cross-subject layer  allows  the  network  to  explicitly  model  interactions among subjects through attentional operations. This proof-of-concept  approach  shows  how  multi-modality  and  joint modeling  of  both  interactants  for  longer  periods  of  time helps to predict individual attributes.&lt;/p&gt;
+</description>
+				
+				<pubDate>Sat, 01 Jan 2022 00:00:00 +0100</pubDate>
+				<link>http://localhost:4000http://localhost:4000/publications/2022/01/01/dyadformer.html</link>
+				<guid isPermaLink="true">http://localhost:4000http://localhost:4000/publications/2022/01/01/dyadformer.html</guid>
+			</item>
+		
+			<item>
+				<title>Context-Aware Personality Inference in Dyadic Scenarios: Introducing the UDIVA Dataset</title>
+				
+				
+					<description>&lt;p&gt;This paper introduces UDIVA, a new non-acted dataset of face-to-face dyadic interactions, where interlocutors perform competitive and collaborative tasks with different behavior elicitation and cognitive workload. The dataset consists of 90.5 hours of dyadic interactions among 147 participants distributed in 188 sessions, recorded using multiple audiovisual and physiological sensors. Currently, it includes sociodemographic, self- and peer-reported personality, internal state, and relationship profiling from participants.&lt;/p&gt;
+</description>
+				
+				<pubDate>Fri, 01 Jan 2021 00:00:00 +0100</pubDate>
+				<link>http://localhost:4000http://localhost:4000/publications/publication/2021/01/01/udiva.html</link>
+				<guid isPermaLink="true">http://localhost:4000http://localhost:4000/publications/publication/2021/01/01/udiva.html</guid>
+			</item>
+		
+			<item>
+				<title>Recurrent CNN for 3D Gaze Estimation using Appearance and Shape Cues</title>
+				
+				
+					<description>&lt;p&gt;In this paper, we tackle the problem of person- and head pose-independent 3D gaze estimation from remote cameras, using a multi-modal recurrent convolutional neural network (CNN). We propose to combine face, eyes region, and face landmarks as individual streams in a CNN to estimate gaze in still images. Then, we exploit the dynamic nature of gaze by feeding the learned features of all the frames in a sequence to a many-to-one recurrent module that predicts the 3D gaze vector of the last frame.&lt;/p&gt;
+</description>
+				
+				<pubDate>Fri, 01 Jun 2018 00:00:00 +0200</pubDate>
+				<link>http://localhost:4000http://localhost:4000/publications/2018/06/01/gaze.html</link>
+				<guid isPermaLink="true">http://localhost:4000http://localhost:4000/publications/2018/06/01/gaze.html</guid>
+			</item>
+		
+			<item>
+				<title>Folded Recurrent Neural Networks for Future Video Prediction</title>
+				
+				
+					<description>&lt;p&gt;This work introduces double-mapping Gated Recurrent Units (dGRU), an extension of standard GRUs where the input is considered as a recurrent state. An extra set of logic gates is added to update the input given the output. Stacking multiple such layers results in a recurrent auto-encoder: the operators updating the outputs comprise the encoder, while the ones updating the inputs from the decoder. Since the states are shared between the corresponding encoder and decoder layers, the representation is stratified during learning: some information is not passed to the next layers.&lt;/p&gt;
+</description>
+				
+				<pubDate>Mon, 01 Jan 2018 00:00:00 +0100</pubDate>
+				<link>http://localhost:4000http://localhost:4000/publications/2018/01/01/frnn.html</link>
+				<guid isPermaLink="true">http://localhost:4000http://localhost:4000/publications/2018/01/01/frnn.html</guid>
+			</item>
+		
+	</channel>
+</rss>

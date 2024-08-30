@@ -1,0 +1,38 @@
+
+<!-- Navigation Start -->
+
+<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+        <i class="fa fa-bars"></i>
+      </button>
+      {% if page.section-type == "index" %}
+        <a class="navbar-brand page-scroll" href="#page-top">
+      {% else %}
+        <a class="navbar-brand" href="{{site.url}}/">
+      {% endif %}
+          <div>
+            {% if site.black-favicon %}
+              <img src="{{site.url}}{{ site.black-favicon }}" alt="">
+            {% endif %}
+            {{ site.title }}
+          </div>
+        </a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+      <ul class="nav navbar-nav">
+        {% for p in site.section_list %}
+          <li>
+            <li> <a href="{{site.url}}/{{ p[1] }}"> {{p[0]}} </a> </li>
+          </li>
+        {% endfor %}
+        <li>&nbsp;</li>
+        <li>{% include social-buttons.html %}</li>
+      </ul> 
+    </div>
+  </div>
+</nav>
+
+<!-- Navigation End -->

@@ -1,0 +1,21 @@
+<!-- Social Buttons Start -->
+
+<ul class="list-inline social-buttons">
+  {% for network in site.social %}
+    {% if network.icon== "rss" %}
+      <li>
+      <a href="{{ network.url }}" target="_blank">
+      <i class="fa-solid fa-{{network.icon}}"></i>
+      </a>
+      </li>
+    {% else %}
+      <li>
+        <a href="{{ network.url }}" target="_blank">
+          <i class="fa-brands fa-{{ network.icon}}"></i>
+        </a>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>
+
+<!-- Social Buttons End -->

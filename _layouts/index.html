@@ -1,0 +1,45 @@
+<!-- Index Layout Start -->
+
+<!doctype html>
+<html lang="{{ site.lang }}">
+
+  {% include head.html %}
+
+  <body
+    id="page-top"
+    data-spy="scroll"
+    data-target=".navbar-fixed-top"
+    data-offset="151"
+  >
+    {% include navigation.html %} 
+
+    <div class="intro">
+      <div class="intro-body">
+            <div class="col-md-10 col-md-offset-1">
+              <span class="intro-text">{{ content }}</span>
+              <h3 class="brand-heading">&nbsp;</h3>
+              <a href="{{ site.url }}/about">
+                <img class="img-me" src="{{ site.me-img }}" alt="Picture of Javier Selva. Caucasian male wearing a shirt, with short hair and a slight smile, on a white background." />
+              </a>
+              {% include social-buttons.html %}
+              <font size="5px"> I am an AI and ML researcher, with a PhD focused in Computer Vision for learning video representations. </font>
+            </div>
+      </div>
+    </div>
+            
+            {% for p in site.pages_list %} 
+              {% for page in site.pages %} 
+                {% if p[1] == page.section-type %} 
+                  {% include {{ page.path }} %} 
+                {% endif %} 
+              {% endfor %}
+            {% endfor %}
+
+    {% include footer.html %} 
+
+    {% include js.html %}
+
+  </body>
+</html>
+
+<!-- Index Layout End -->
