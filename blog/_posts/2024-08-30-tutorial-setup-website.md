@@ -29,7 +29,7 @@ It is frankly easy to set up.
 
 You should probably follow the [installation guides on the official website](https://jekyllrb.com/docs/installation/). I actually missed those and ended up installing it using `apt install` which throws a bunch of permission errors when trying to use the tool later on. I had to install the theme's dependencies on a folder in the `/home` directory instead of within the package folder. 
 
-Installing using `gem` instead should be better for you, as most solutions I found to solve my issues pointed to using `gem` command to solve them. Which I couldn't do as I installed it using `apt`.
+Installing using `gem` instead should be better for you, as most solutions I found to solve my issues pointed to using `gem` command to solve them. Which I couldn't do as I installed it using `apt`. 
 
 ## Then you find a theme you like.
 
@@ -37,7 +37,14 @@ You can also start your site from scratch, if that's your kind of thing. I know 
 away from knowing how to deal with styles and css. So I headed into [Jekyll Themes](https://jekyll-themes.com/) and searched around for some 
 keywords like "personal", "academic" and so on. After too much pondering, I went for [Le4ker's Theme](https://le4ker.github.io/personal-jekyll-theme/). If you have not yet created your page's repo you can directly fork the github repository containing the theme you like, rename it to be `yourdomain.github.io` and work from there. I had already created my repo and domain, and after a bit of googling I didn't seem to find a way to migrate that to a different repository, so I just downloaded it as a zip file and replaced my original repo contents with that.
 
-Once it is on your computer, either by downloading or cloning, you have to install the plugins for that theme. You simply go into the folder containing the theme and run `bundle install`. As usual, you fight with some or other package dependency and problematic folder permission issues, but stack-overflow is your friend. Once that is done you can start working on your site.
+Once it is on your computer, either by downloading or cloning, you have to install the plugins for that theme. You simply go into the folder containing the theme and run `bundle install`. As usual, you fight with some or other package dependency and problematic folder permission issues, but stack-overflow is your friend. Once that is done you can start working on your site. 
+
+Just in case you ran into the same permission issues I had, I solved it by simply exporting an appropriate path where bundle files could be installed (somewhere within my home directory):
+
+```bash
+export BUNDLE_PATH=~/path/to/bundle/install/dir/
+bundle install
+```
 
 ## Jekyll's Basics.
 
@@ -143,3 +150,23 @@ You can create as many variables as you need and then reference them from the ht
 ```
 
 And that mostly sums up the basics of building your page with Jeckyll. There are other interesting issues to address, such as handling pagination when handling multiple posts. But I'll leave those for a future post.
+
+## Deploy the site to GitHub
+Finally, the moment has come! Your website looks awesome and is time for everyone to see. Once you've done all of the above (make sure the gemfile was generated, and that you ran `bundle install`) you can start the process of uploading it to your repository.
+
+For this process, I followed [this guide](https://idratherbewriting.com/documentation-theme-jekyll/mydoc_publishing_github_pages.html#add-the-github-pages-gem). First of all, you need to edit the Gemfile, remove everything contained in it and repace its contents by:
+
+```
+source 'https://rubygems.org'
+gem 'github-pages'
+```
+
+Next simply add all to git and push.
+
+```
+git add --all
+git commit -m 'first jekyll site commit'
+git push
+```
+
+And that's it!! Now you're all set and can start focusing on creating new content for your blog!!
