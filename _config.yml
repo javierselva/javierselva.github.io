@@ -133,6 +133,8 @@ collections:
   publications:
     permalink: "/publications/:path"
     paginate_path: "/publications/page:num/"
+  about:
+    permalink: "/about/"
 # Enable minification SASS
 sass:
   style: compressed
