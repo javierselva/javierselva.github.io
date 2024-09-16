@@ -7,6 +7,32 @@
 		<atom:link href="http://localhost:4000http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>Understanding Softmax Temperature</title>
+				
+				
+					<description>&lt;p&gt;The Softmax function re-normalizes values so they become a probability distribution (sum to 1). In order to achieve this, the softmax function takes three steps. Let’s take a look at this function from multiple perspectives. If you want to follow or play around, the plots for this post were generated using &lt;a href=&quot;http://localhost:4000/assets/notebooks/understanding-softmax-with-temperature.ipynb&quot;&gt;this notebook&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Fri, 13 Sep 2024 00:00:00 +0200</pubDate>
+				<link>http://localhost:4000http://localhost:4000/blog/math/2024/09/13/math-softmax.html</link>
+				<guid isPermaLink="true">http://localhost:4000http://localhost:4000/blog/math/2024/09/13/math-softmax.html</guid>
+			</item>
+		
+			<item>
+				<title>Using ghostscript to hide private data in PDFs</title>
+				
+				
+					<description>&lt;p&gt;This something I’ve frankly had to do several times. Some entity requires a sepecific information from you, information you’ve got in a PDF. However, that file does contain some other sensitive information (e.g., bank transactions) you do not wish to share. It would be very helpful, then, to be able to extract that one or two pages you want to share.&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Fri, 06 Sep 2024 00:00:00 +0200</pubDate>
+				<link>http://localhost:4000http://localhost:4000/blog/tnt/2024/09/06/ghostscript.html</link>
+				<guid isPermaLink="true">http://localhost:4000http://localhost:4000/blog/tnt/2024/09/06/ghostscript.html</guid>
+			</item>
+		
+			<item>
 				<title>Setting up your site with Jekyll.</title>
 				
 				

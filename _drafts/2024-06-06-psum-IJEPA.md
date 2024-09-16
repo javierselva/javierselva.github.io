@@ -42,7 +42,8 @@ Key ideas:
 	Check!! DINO Says " As shown experimentally in Appendix, centering prevents one dimension to dominate but encourages collapse to the uniform distribution, while the sharpening has the opposite effect". In the MSN paper they claim they are "maximizing entropy", whereas DINO does centering and sharpening: centering makes representations uniform (by subtracting the running mean, salient features will progressively get flattened) whereas sharpening makes them focus on salient features alone (a very low temperature on the softmax will practially put everything to 0 except a few salient features). the balance between the two achieves representations that are different from each other, achieving, I guess, something similar as maximizing entropy: no patterns in representation structure
 
 The method:
-	- To avoid collapse they use asymetries and condition the prediction on the positions that are requested to be predicted (by using as input the PE learned for that position)
+	- To avoid collapse they use asymetries and condition the prediction on the positions that are requested to be predicted (by using as input the PE learned for that position).
+	- "JEPAs do not seek representations invariant to a set of hand-crafted data augmentations, but instead seek representations that are predictive of each other when conditioned on additional information z"
 
 
 
@@ -57,27 +58,3 @@ LeCun has other papers on this topic such as the VICRegL.
 Maybe complement this post with the V-JEPA which is a straightforward adaptation to this one, and comment on the limitations for video.
 
 
-# TRYING TO UNDERSTAND TEMPERATURE IN SOFTMAX ONCE AND FOR ALL
-
-Softmax function is trying to highlight the higher values. Enter temperature. If you use no temperature, that's equivalent to using a temperature of 1, meaning the distribution is unchanged. If you use a decimal temperature (smaller than one), the lower it is, this is equivalent to multiplying for increasing numbers. If you use an integer, that means you are dividing. When multiplying, bigger values in the vector will proportionally scale more than smaller values, causing the differences between values to become steeper, further highlighting the bigger ones. On the other hand, if using integers, the larger they are, the result of the softmax progresively becomes a uniform distribution.
-
-So, let's see the formula for the softmax
-
-$$ \mathcal{S}(y_i)=\frac{e^{y_i}}{\sum_{j=1}^{i}{e^{y_j}}} $$
-
-
-```python
-def softmax(x):
-    e_x = np.exp(x - np.max(x))
-    return e_x / e_x.sum()
-```
-
-ALSO INSERT GRAPHIC SHOWING THE SOFTMAX and exponential function e
-
-https://www.researchgate.net/profile/Shixiang-Gu-3/publication/309663606/figure/fig4/AS:650391326834690@1532076784734/The-Gumbel-Softmax-distribution-interpolates-between-discrete-one-hot-encoded-categorical.png
-
-https://upload.wikimedia.org/wikipedia/commons/c/c6/Exp.svg
-
-
-
-This helps explain how this value can influence the "creativity" of a chatbot such as GPT. The lower the temperature, the less options it has to choose from when producing the next token, hence become more deterministic and *focused*, whereas with a higher temperature it becomes more "diverse" and *creative*, because it weights more options as having a similar weight.

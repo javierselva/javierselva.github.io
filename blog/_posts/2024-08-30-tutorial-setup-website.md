@@ -45,6 +45,7 @@ Just in case you ran into the same permission issues I had, I solved it by simpl
 export BUNDLE_PATH=~/path/to/bundle/install/dir/
 bundle install
 ```
+But remember, if you needed to do this for the installation, you may need to do it again every time you want to run your web locally. To avoid having to export every time, you may want to simply include the export in the .bashrc file.
 
 ## Jekyll's Basics.
 

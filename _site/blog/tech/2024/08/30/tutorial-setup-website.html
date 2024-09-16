@@ -221,6 +221,7 @@ keywords like “personal”, “academic” and so on. After too much pondering
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">BUNDLE_PATH</span><span class="o">=</span>~/path/to/bundle/install/dir/
 bundle <span class="nb">install</span>
 </code></pre></div></div>
+<p>But remember, if you needed to do this for the installation, you may need to do it again every time you want to run your web locally. To avoid having to export every time, you may want to simply include the export in the .bashrc file.</p>
 
 <h2 id="jekylls-basics">Jekyll’s Basics.</h2>
 
@@ -334,11 +335,12 @@ bundle <span class="nb">install</span>
 <h2 id="deploy-the-site-to-github">Deploy the site to GitHub</h2>
 <p>Finally, the moment has come! Your website looks awesome and is time for everyone to see. Once you’ve done all of the above (make sure the gemfile was generated, and that you ran <code class="language-plaintext highlighter-rouge">bundle install</code>) you can start the process of uploading it to your repository.</p>
 
-<p>For this process, I followed <a href="https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll">this guide</a>. First of all, you need to edit the Gemfile, remove everything contained in it and repace its contents by:</p>
+<p>For this process, I followed <a href="https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll">this guide</a>. First of all, you need to edit the Gemfile to add github support by ading:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>source 'https://rubygems.org'
 gem 'github-pages'
 </code></pre></div></div>
+<p>(The first line may already be there, in which case you do not need to add it). After that, you need to re-run <code class="language-plaintext highlighter-rouge">bundle install</code> so the github-pages package is properly installed. In my case, this caused some dependency issues: my Gemfile included some specific versions for different libraries such that they will allow for the site to work, but none of those seemed compatible with github-pages. So I removed the versions for all packages and let bundle figure it out. I may regret this down the line, but so far it seems like everything is working as expected.</p>
 
 <p>Remember to add <code class="language-plaintext highlighter-rouge">Gemfile.lock</code> to .gitignore. Finally, simply add all to git and push.</p>
 
@@ -559,12 +561,12 @@ git push
 
 
 
-<!--
+
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
--->
+<!--
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script” async src=”https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
+-->
 
 
  

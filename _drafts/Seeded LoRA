@@ -1,0 +1,15 @@
+Seeded LoRA (Alejandro Salamanca Talk, paper presentation)
+
+https://openreview.net/pdf?id=7aNXyyXoni
+
+Parameter-Efficient Fine-Tunning (tunning only a small set of parameters... are they random?)
+
+Low-Rank Adaptation (LoRA), seems to be a type of PEFT... (original paper: https://arxiv.org/abs/2106.09685). It seems like they add a couple of new networks A and B, smaller than the original net you want to train.
+
+Nowadays, for LLMs, people is mostly using LoRA. You can have multiple loras for multiple things... how can we merge them into a single model?? Apparently is not that easy, so MoLoRA tries to do some mixture of expert type of thing... but they are trained alltoghether, something similar to finetunning for multiple tasks in parallel??
+
+This paper tries to do this... Apparently this is made easy by using the same initialization for each independent fine-tunning, by using the same seed, they are exploring the optimization space from the same area, making them compatible.
+
+Check!! (hice captura) Tienen referencias interesantes para explicar las propiedades de la optimización en base a la inicialización.
+
+With this, you can merge by simple weight averaging Ô_Ô 
