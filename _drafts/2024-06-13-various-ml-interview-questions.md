@@ -100,7 +100,7 @@ Apparently you can choose one metric or another depending on the cost of FP and 
 https://medium.com/game-of-bits/how-to-deal-with-imbalanced-data-in-classification-bd03cfc66066
 "decision tree-based algorithms perform well on imbalanced datasets. Similarly bagging and boosting based techniques are good choices for imbalanced classification problems."
 
-You could approach it as an anomaly detection problem, to make
+You could approach it as an anomaly detection problem, to make the model focus on those anomaly cases.
 
 Assuming this is a labeled dataset, you can weight the loss differently for those classes for which you have less data. 
 
@@ -111,16 +111,81 @@ SMOTE: You can extend your minority class with synthetic data (interpolating sam
 And I'm guessing that you'd also need to consider that imbalance when computing the metrics to evaluate the model (e.g., Using recall for the minority class(es))
 
 # What loss function will you use to measure multi-label problems
-        ◦ I’ve never seen multi-label problems!
+
+## About multi-label problems
+https://en.wikipedia.org/wiki/Multi-label_classification#Statistics_and_evaluation_metrics
+https://medium.com/data-science-in-your-pocket/multi-label-classification-for-beginners-with-codes-6b098cc76f99
+Multi-label classification problems are generally posed as either an esemble of binary classifiers (one vs all for all classes), or, alternatively, one can build pseudo-classes for all possible combination of labels and then train a common multi-class model. These problems may overcomplicate issues like class imbalance (if we need more examples of a specific label, we may not be able to upsample the minority without also upsample for other associated labels -- and the same if we need to downsample the majority class, we may be distroying relevant samples for other classes.). Apparently, you could also simply use a normal classifier and replace the output softmax by a sigmoid, so multiple entries may have a large activation. I guess in that case you'd need to define a threshold from which you'd consider that the model has detected one of the classes. I think that, as with other cases, the label won't be a 1-hot vector but a binary vector. (Apparently not, you need to use a binary cross-entropy, aka logistic loss, (and sum it over the multiple classes) for some reason, acording to [this](https://machinelearningmastery.com/multi-label-classification-with-deep-learning/). May have somehting to do with the emphasis on having a sigmoid for each output neuron -- one for each class). https://medium.com/@kitkat73275/multi-label-classification-8d8ae55e8373
+
+
+## Metrics
+Now, if we uses the pseudo-class variant, we can straight use accuracy, meaning that we'll only count as valid if the model correctly predicts all labels for a given sample. We can also apply this if we use multiple binary classifiers. Now, this is very strict, and we may want to value when our model predicts at least some of the labels. For this we can use:
+
+ - Hamming distance (loss): simply counts how many correct labels for each sample and normalizes by the batch size and number of max labels for a given sample in the batch. We represent each label as a binary vector, and we count the hits by applying an *xor* gate: "returns zero when the target and prediction are identical and one otherwise".
+ - Precission, recall and F1: Here it is easier to use these metrics similarly to a retrieval problem (one has to *retrieve* all labels for a given sample). In this sense, T are the true labels, and P are the predicted ones. Precission: intersec(T,P) / P (i.e., true positives divided by true positives + false positives); Recall: intersec(T,P) / T (i.e., true positives divided by true positives + false negatives). F1 is the harmonic mean of the two.
+ - Jaccard Index (IoU): intersec(T, P) / union(T, P) (true positives divided by true positives + false negatives + false positives)
+   IoU is better understood in the context of image segmentation. It computes the ratio of success (intersection of prediction and ground truth)with respect to the overall area (predicted + ground truth)
 
 # Explain PCA intuitively. When is it useful?
+entender la idea básica
 
 # What causes vanishing / exploding gradients? How to solve it?
+entender la idea básica
+hacer ejercicios básicos de pytorch de wrappear lo que toque para lograr eso
 
 # Ensemble algorithm? (Random forest; feature and data replacement; reduce variance
-"explain random forests"
+https://en.wikipedia.org/wiki/Ensemble_learning
+"Fundamentally, an ensemble learning model trains many (at least 2) high-bias (weak) and high-variance (diverse) models to be combined into a stronger and better performing model. Essentially, it's a set of algorithmic models — which would not produce satisfactory predictive results individually — that gets combined or averaged over all base models to produce a single high performing, accurate and low-variance model to fit the task as required."
+
+"Ensemble learning typically refers to Bagging (bootstrap-aggregating), Boosting or Stacking/Blending techniques to induce high variability among the base models. Bagging creates diversity by generating random samples from the training observations and fitting the same model to each different sample — also known as "homogeneous parallel ensembles". Boosting follows an iterative process by sequentially training each next base model on the up-weighted errors of the previous base model's errors, producing an additive model to reduce the final model errors — also known as "sequential ensemble learning". Stacking or Blending consists of different base models, each trained independently (i.e. diverse/high variability) to be combined into the ensemble model — producing a "heterogeneous parallel ensemble"."
+
+It seems like the key here is to have variability in your models, to make sure you're covering a wider range of solutions: "although perhaps non-intuitive, more random algorithms (like random decision trees) can be used to produce a stronger ensemble than very deliberate algorithms"
+
+It may take many forms: Bagging (Random forests), Boosting, different Bayesian approximation techniques (B optimal classifier, B averaging, B model combination...), Bucket of models...
+
+Bagging: Create various sub-datasets, allowing to have the same sample multiple times, others may not appear. With each of these you can train a random tree to make decisions based on that set of the data. By building several noisy (variable) models, with different biases, we get to cover varying possibilities. The final decission is reached by voting (for example).
+See also: Rotation forest – in which every decision tree is trained by first applying principal component analysis (PCA) on a random subset of the input features
+
+Boosting: Build a sequential set of classifiers where each focuses on tackling the samples for which the previous one had more trouble (more errors.) The second one will see all samples the same, but the ones for which the first model had more trouble will be weighted higher in the loss. This is done multiple times. Tend to overfit (example is Adaboost).
+
+# What is a decision tree?
+https://en.wikipedia.org/wiki/Decision_tree
+A decision tree is a flowchart-like structure in which each internal node represents a "test" on an attribute (e.g. whether a coin flip comes up heads or tails), each branch represents the outcome of the test, and each leaf node represents a class label (decision taken after computing all attributes). The paths from root to leaf represent classification rules. 
+
+https://en.wikipedia.org/wiki/Decision_tree_learning
+"process of top-down induction of decision trees (TDIDT)[5] is an example of a greedy algorithm, and it is by far the most common strategy for learning decision trees from data"
+
+# Explain RandomForests
+https://en.wikipedia.org/wiki/Random_forest
+"because it is invariant under scaling and various other transformations of feature values, is robust to inclusion of irrelevant features, and produces inspectable models. However, they are seldom accurate"
+
+"Trees that are grown very deep tend to learn highly irregular patterns: they overfit their training sets, i.e. have low bias, but very high variance. Random forests are a way of averaging multiple deep decision trees, trained on different parts of the same training set, with the goal of reducing the variance. This comes at the expense of a small increase in the bias and some loss of interpretability, but generally greatly boosts the performance in the final model."
+
+Ensembling random trees aids with these problems.
+
 
 # How to split a tree?
+https://www.analyticsvidhya.com/blog/2020/06/4-ways-split-decision-tree/
+"The process of recursive node splitting into subsets created by each sub-tree can cause overfitting. Therefore, node splitting is a key concept that everyone should know."
+
+"The ways of splitting a node can be broadly divided into two categories based on the type of target variable:
+
+    1. Continuous Target Variable: Reduction in Variance
+    2. Categorical Target Variable: Gini Impurity, Information Gain, and Chi-Square"
+
+
+https://www.geeksforgeeks.org/how-to-determine-the-best-split-in-decision-tree/
+    1. Calculate Impurity Measure:
+        Compute an impurity measure (e.g., Gini impurity or entropy) for each potential split based on the target variable’s values in the resulting subsets.
+    2. Calculate Information Gain:
+        For each split, calculate the information gain, which is the reduction in impurity achieved by splitting the data.
+    3. Select Split with Maximum Information Gain:
+        Choose the split that maximizes information gain. This split effectively separates the data into subsets that are more homogeneous with respect to the target variable.
+    4. Repeat for Each Attribute:
+        Repeat the process for all available attributes, selecting the split with the highest information gain across attributes.
+
+
+hacer algún ejercicio de programación al respecto
 
 # How does a typical anomaly detection pipeline work?
 
@@ -128,11 +193,17 @@ And I'm guessing that you'd also need to consider that imbalance when computing 
 
 # In the model we developed, we have a billion positive samples and 200,000 negative samples. If you were to review our model before we put it on the website, what would you look for in the model to ensure this model is not bad?
 
-# Explain Maximum likelihood.
+# Explain Maximum likelihood. How is it related to the cross entropy?
 
 # Explain Expectation Maximization.
 
+# Explain Logistic Regressions
+
 # ReLU? GeLU? TanH? Sigmoid? Softmax? Logistic function (like softmax for binary problems)?
+
+Hacer lo mismo que con la softmax (código de visualizar) para entender un poquito las diferentes cositas que hay
+
+I think the logistic function is the binary cross-entropy.
 
 # How does an RNN work? And a GRU unit? How is LSTM different? What limitations do these models have? What strenghts?
 
@@ -150,6 +221,8 @@ DSSIM is a measure of the perceived quality
 # Could you describe how you train this Context-awareness entity ranking model?
 
 # Explain the “Moore–Penrose inverse” and “Frobenius norm”.
+https://mathworld.wolfram.com/FrobeniusNorm.html
+The Frobenius norm is the Euclidean norm but for matrices. It's the square root of the sum of squares of its components.
 
 # Explain binomial probabilities
 

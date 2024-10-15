@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<!-- Post Layout Start --><html lang="en">
+  <!-- HEAD Start -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Website and blog of Javier Selva.">
+  <meta name="author" content="Javier Selva">
+  <meta name="keywords" content="selva, javier, personal, academic, ai, research, deep learning, machine learning">
+  <link rel="canonical" href="/blog/tnt/2024/10/04/tnt-badblocks.html">
+  <title>Javier Selva's Personal Site | Checking the state of your HDD with badblocks</title>
+
+  <!-- CSS links -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet" integrity="sha512-pli9aKq758PMdsqjNA+Au4CJ7ZatLCCXinnlSfv023z4xmzl8s+Jbj2qNR7RI8DsxFp5e8OvbYGDACzKntZE9w==" crossorigin="anonymous" defer>
+  <link href="http://localhost:4000/css/grayscale.css" rel="stylesheet">
+
+  
+
+  
+    
+      <link rel="stylesheet" type="text/css" href="http://localhost:4000/css/everforest.css">
+    
+    <link rel="stylesheet" href="http://localhost:4000/css/rrssb.css">
+  
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&amp;display=swap" rel="stylesheet" defer>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" defer>
+
+  
+    <link rel="shortcut icon" type="image/x-icon" href="http://localhost:4000/assets/img/favicon.ico">
+  
+
+  
+
+  
+
+<!-- iOS Web App mode -->
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="apple-touch-icon" sizes="36x36" href="http://localhost:4000">
+<link rel="apple-touch-icon" sizes="48x48" href="http://localhost:4000">
+<link rel="apple-touch-icon" sizes="72x72" href="http://localhost:4000">
+<link rel="apple-touch-icon" sizes="96x96" href="http://localhost:4000">
+<link rel="apple-touch-icon" sizes="144x144" href="http://localhost:4000">
+<link rel="apple-touch-icon" sizes="192x192" href="http://localhost:4000">
+
+<!-- Android Web App mode -->
+
+<link rel="manifest" href="http://localhost:4000/manifest.json">
+
+
+
+
+  <!-- Chrome, Firefox OS and Opera -->
+<meta name="theme-color" content="#000000">
+<!-- iOS Safari -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+
+  <!-- this is needed to be able to control a little bit what google indexes of the website -->
+  <meta name="google-site-verification" content="Lb06aK3u6JCMl7911NwXuKLiqMpBY1umNdJF4sfBgRo">
+  
+</head>
+
+<!-- HEAD End -->
+
+
+  <body>
+    
+<!-- Navigation Start -->
+
+<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+        <i class="fa fa-bars"></i>
+      </button>
+      
+        <a class="navbar-brand" href="http://localhost:4000/">
+      
+          <div>
+            
+              <img src="http://localhost:4000/assets/img/computer.ico" alt="">
+            
+            Javier Selva Castelló
+          </div>
+        </a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+      <ul class="nav navbar-nav">
+        
+          <li>
+            </li>
+<li> <a href="http://localhost:4000/publications/"> Papers </a> </li>
+          
+        
+          <li>
+            </li>
+<li> <a href="http://localhost:4000/blog/"> Blog </a> </li>
+          
+        
+          <li>
+            </li>
+<li> <a href="http://localhost:4000/about"> About </a> </li>
+          
+        
+        <li> </li>
+        <li>
+<!-- Social Buttons Start -->
+
+<ul class="list-inline social-buttons">
+  
+    
+      <li>
+        <a href="https://twitter.com/javier_selvac" target="_blank">
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="https://github.com/javierselva" target="_blank">
+          <i class="fa-brands fa-github"></i>
+        </a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="https://www.linkedin.com/in/javier-selva-castell%C3%B3-399738134/" target="_blank">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="https://scholar.google.com/citations?user=T5-DYyUAAAAJ" target="_blank">
+          <i class="fa-brands fa-google-scholar"></i>
+        </a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="https://www.youtube.com/@javierselva509/featured" target="_blank">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+      </li>
+    
+  
+</ul>
+
+<!-- Social Buttons End -->
+</li>
+      </ul> 
+    </div>
+  </div>
+</nav>
+
+<!-- Navigation End -->
+
+
+    <section id="post" class="container content-section text-center">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <h1><strong>Checking the state of your HDD with badblocks</strong></h1>
+          <h4>
+            <strong>04 Oct 2024</strong>
+            <small>
+              .
+              <a class="category" href="http://localhost:4000/categories/tnt.html">
+                tnt </a>.
+              
+              <br>
+              
+              <a class="tag" href="http://localhost:4000/tags/tnt.html">#tnt</a>
+              
+              <a class="tag" href="http://localhost:4000/tags/hdd.html">#hdd</a>
+              
+              <a class="tag" href="http://localhost:4000/tags/drive.html">#drive</a>
+              
+              <a class="tag" href="http://localhost:4000/tags/check.html">#check</a>
+              
+              <a class="tag" href="http://localhost:4000/tags/badblocks.html">#badblocks</a>
+              
+            </small>
+          </h4>
+
+          <section class="text-justify">
+            <h1 id="introduction">Introduction</h1>
+<p>Since I had an hdd scare and almost lost all of my childhood pictures I started taking backups and disk status seriously. There are many ways to do this. You can pay for cloud storage and let professionals handle it. Or if you’re feeling techie you can set up some raid build so your data replicates automatically. But if like me you’re on a budget, the easiest way I’ve found is to manually hold several copies in different hard drives, and ideally have them in different places.</p>
+
+<p>But that’s not all, you want to regularly check the state of your hard drives. In principle they should last you for a long time, but you can even find new drives to have some bad blocks. And this will only get worse with time and the more you use them. There are some utilities like <a href="https://en.wikipedia.org/wiki/CrystalDiskMark">CrystalDiskInfo</a> for Windows or <a href="https://www.smartmontools.org/"><code class="language-plaintext highlighter-rouge">smartctl</code></a> for Linux that allow you to get a good estimate on the state of your drive. However, these tools use a technology known as S.M.A.R.T. (Self-Monitoring, Analysis, and Reporting Technology) which pasively reports cases of bad blocks in hard drvies. For most day to day cases this is enough, they can let you know if something starts to look badly. If these quick tests (<a href="#s.m.a.r.t.">see below</a>) already report some problems, the safest option is to just back up the drive before doing anything else. If it is in very bad shape you may even need <a href="https://askubuntu.com/questions/313081/what-tool-should-i-use-for-a-bit-by-bit-copy-of-my-hard-drive">specialized tools to do so</a>. However, modern drives supporting S.M.A.R.T. are capable of handling a few bad blocks, so you may want to assess the magnitude of the problem with some other tool. Similarly, for new drives you plan to use as back up, it may be wise to run some deeper test, even once a year.</p>
+
+<h1 id="badblocks">Badblocks</h1>
+<p>To do this, you can use <a href="https://wiki.archlinux.org/title/Badblocks"><code class="language-plaintext highlighter-rouge">badblocks</code></a>. This tool will read/write from/to every single block in your hard drive. Badblocks is intense, as it will perform millions of read-write operations, stressing the (potentially already damaged) hard drive. Ideally, badblocks should report 0 bad blocks on a new device. If you have information you wish to keep in the drive, you should perform a <strong>read only test</strong>, as a read/write test will entirely remove all data contained in the disk. In any case, before doing anything, <strong>always back-up your data</strong>.</p>
+
+<p>To use it you need to follow these steps:</p>
+
+<ol>
+  <li>Install <code class="language-plaintext highlighter-rouge">badblocks</code>
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get <span class="nb">install </span>e2fsprogs
+</code></pre></div>    </div>
+    <p>Now you’re ready to run the test. Bear in mind this may take several <strong>days</strong> depending on the size of your drive. It will perform the test several times to make absolutely sure everything is fine.</p>
+  </li>
+  <li>Find out your hard drive address:
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>lshw <span class="nt">-class</span> disk
+</code></pre></div>    </div>
+    <p>This will give out something like:</p>
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>*-disk                    
+    description: SCSI Disk
+    product: 541010A9E680
+    vendor: HGST HTS
+    physical id: 0.0.0
+    bus info: scsi@2:0.0.0
+    logical name: /dev/sdb
+    size: 931GiB (1TB)
+    capabilities: gpt-1.00 partitioned partitioned:gpt
+    configuration: ansiversion=6 guid=88003064-c468-484a-852f-8b089508b84e logicalsectorsize=512 sectorsize=512
+  *-disk
+    description: ATA Disk
+    product: Intenso SSD Sata
+    physical id: 0
+    bus info: scsi@0:0.0.0
+    logical name: /dev/sda
+    version: 9A0
+    serial: AYSAU1227OUT000094
+    size: 953GiB (1024GB)
+    capabilities: gpt-1.00 partitioned partitioned:gpt
+    configuration: ansiversion=5 guid=1589a582-3c6d-4587-8488-532feb1e6e9c logicalsectorsize=512 sectorsize=512
+</code></pre></div>    </div>
+    <p>Whith the information provided it should be enough to identify the disk. If you still can’t tell which one it is, you may want to try <a href="https://gparted.org/"><code class="language-plaintext highlighter-rouge">gparted</code></a>, with the GUI showing partitions it may be easier to tell apart the disks. In my case, the SSD is my internal hard drive, and the other disk is the external one I need to check, which logical name is <code class="language-plaintext highlighter-rouge">/dev/sdb</code> (for all commands below make sure you replace this with the name of your disk).</p>
+  </li>
+  <li>You may need to unmount the device before badblocks can analyze your device:
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>lsblk /dev/sdb
+</code></pre></div>    </div>
+    <p>Which will give you somehting like:</p>
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+sdb      8:16   0 931,5G  0 disk 
+├─sdb1   8:17   0   549G  0 part /media/username/Windows10
+</code></pre></div>    </div>
+    <p>So then you can run:</p>
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>umount /media/username/Windows10
+</code></pre></div>    </div>
+  </li>
+  <li>Actually run the test.
+    <ul>
+      <li>A) Run a destructive test. This will rewrite everything in your drive, so a backup of your data is highly recommended. This test makes the most sense on a new or empty drive. I’m using the <code class="language-plaintext highlighter-rouge">-b 4096</code> option, which specifies the block size, and is supposed to make the run very slightly faster.
+        <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> <span class="nb">sudo </span>badblocks <span class="nt">-wsv</span> <span class="nt">-b</span> 4096 /dev/sdb
+</code></pre></div>        </div>
+        <p>This will write four different patterns on each individual block, then read them to check everything is fine. Effectively, <strong>this will remove all data in the disk</strong>.</p>
+      </li>
+      <li>B) You can alternatively perform a non-destructive test.
+        <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> <span class="nb">sudo </span>badblocks <span class="nt">-nsv</span> <span class="nt">-b</span> 4096 /dev/sdb
+</code></pre></div>        </div>
+        <p>This will read the contents of each block, perform the test, and then write the original contents back. In principle this should leave all your data untouched, however, may there be any bad blocks in your drive, it is always safer to perform a backup of your data before running the test.</p>
+      </li>
+      <li>C) If you want to run without danger of damaging your data, you can simply run:
+        <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> <span class="nb">sudo </span>badblocks <span class="nt">-sv</span> <span class="nt">-b</span> 4096 /dev/sdb
+</code></pre></div>        </div>
+        <p>Which will perform the read-only test, ensuring no data is rewriten or broken in the process, but it is not as informative on the health of the disk. However, given that badblocks is an old tool originally written for floppy disks, doing the read-only test that <code class="language-plaintext highlighter-rouge">smartctl</code> provides may be slightly faster:</p>
+        <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> smartctl <span class="nt">-t</span> long /dev/sdb
+</code></pre></div>        </div>
+        <p>This test you can afford to perform regularly, even on larger disks, as it won’t take several days of your time.</p>
+      </li>
+    </ul>
+  </li>
+  <li>Let’s take a loot at the results. Badblocks output looks like this:
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>Checking for bad blocks in read-write mode
+From block 0 to 244190645
+Testing with pattern 0xaa: done                                                 
+Reading and comparing: done   
+Testing with pattern 0x55: done                                                 
+Reading and comparing: done  
+Testing with pattern 0xff: done                                                 
+Reading and comparing: done  
+Testing with pattern 0x00: done                                                 
+Reading and comparing: done                                                
+Pass completed, 0 bad blocks found. (0/0/0 errors)
+</code></pre></div>    </div>
+    <p>The errors are reported as read/write/compare. The two former errors are reported by the disk when performing a specific read/write operation. The compare one is reported by badblocks when the written and read data is different, meaning the disk did not report any problems when reading/writing but the data was corrupted at some point. Note that these errors only appear when using <code class="language-plaintext highlighter-rouge">-w</code> or <code class="language-plaintext highlighter-rouge">-n</code>, and never during a read-only test (nor will the writting errors).</p>
+  </li>
+</ol>
+
+<p>Extra. I was having some trouble running the whole test. I’m not sure whether it was the drive, my computer or badblocks, but either the drive ended up disconnecting (getting “invalid argument during seek”) or the PC would hang. To make sure I could run the test completely, I decided to manually run the test with each of the four patterns badblock uses (0xaa, 0x55, 0xff, 0x00), so I could run one, give the drive a rest, and then another. To manually specify the pattern you can use the <code class="language-plaintext highlighter-rouge">-t</code> option. You can also specify “random” instead of one of the four patterns above. Nevertheless, those four patterns are thought to be executed in that particular order so all bits in the disk hold a 1 and a 0 at some point, and all of them transition from 1 -&gt; 0 and viceversa.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nb">sudo </span>badblocks <span class="nt">-wsv</span> <span class="nt">-t</span> 0xaa <span class="nt">-b</span> 4096 /dev/sdb
+</code></pre></div></div>
+
+<h1 id="smart">S.M.A.R.T.</h1>
+<p>Now, does a bad sector mean I need to change the disk? Yes. And no. Some bad sectors could indicate the beginning of the demise of your drive, and <strong>you should inmediately back up the data</strong> contained on it, some people suggest to absolutely stop using the device after that. However, modern drives using S.M.A.R.T. are capable of reallocating those sectors and make sure they’re never used. So, if you find any errors during the badblocks run, I strongly recommend checking the device with <code class="language-plaintext highlighter-rouge">smartctl</code>. This technology automatically runs some tests on the health of the device, and is able to report that in <a href="https://www.thomas-krenn.com/en/wiki/SMART_tests_with_smartctl">multiple ways</a>. You can use this as a complement to the deeper badblocks’ test, as it will provide with more informative health status of the disk, beyond blocks.</p>
+
+<p>First, you need to install it with</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get <span class="nb">install </span>smartmontools
+</code></pre></div></div>
+<p>For a short summary:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>smartctl <span class="nt">--health</span> /dev/sdb
+</code></pre></div></div>
+<p>Or, as I mentioned above, you can run some tests yourself, either short or long, the main difference being that the short will only test one sector of the device, whereas the long one tests the whole disk. Remember this is a read-only test, so if the device is in good shape it should not affect the data stored on the device.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>smartctl <span class="nt">-t</span> &lt;short|long&gt; /dev/sdb
+</code></pre></div></div>
+<p>For a slightly longer report, and to see the results of the tests above, you can do the following. Also, here’s <a href="https://en.wikipedia.org/wiki/Self-Monitoring,_Analysis_and_Reporting_Technology#ATA_S.M.A.R.T._attributes">a handy guide</a> to try and understand the output of this command.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>smartctl <span class="nt">--all</span> /dev/sdb
+</code></pre></div></div>
+<p>Here’s some example of the output of this last command. First, It will show general information about the device and a general status grade, in this case, “PASSED”, meaning everything is looking good overall.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>=== START OF INFORMATION SECTION ===
+Model Family:     Seagate Samsung SpinPoint M8 (AF)
+Device Model:     ST1000LM024 HN-M101MBB
+Serial Number:    S30YJ9JFB13101
+LU WWN Device Id: 5 0004cf 20e8ded45
+Firmware Version: 2BA30001
+User Capacity:    1.000.204.886.016 bytes [1,00 TB]
+Sector Sizes:     512 bytes logical, 4096 bytes physical
+Rotation Rate:    5400 rpm
+Form Factor:      2.5 inches
+Device is:        In smartctl database [for details use: -P show]
+ATA Version is:   ATA8-ACS T13/1699-D revision 6
+SATA Version is:  SATA 3.0, 6.0 Gb/s (current: 3.0 Gb/s)
+Local Time is:    Tue Sep  3 15:31:36 2024 CEST
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART Status not supported: Incomplete response, ATA output registers missing
+SMART overall-health self-assessment test result: PASSED
+Warning: This result is based on an Attribute check.
+</code></pre></div></div>
+
+<p>Now, if you scroll down a bit, you’ll get to see <strong>the attributes</strong>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SMART Attributes Data Structure revision number: 16
+Vendor Specific SMART Attributes with Thresholds:
+ID# ATTRIBUTE_NAME          FLAG     VALUE WORST THRESH TYPE      UPDATED  WHEN_FAILED RAW_VALUE
+  1 Raw_Read_Error_Rate     0x002f   100   100   051    Pre-fail  Always       -       77
+  2 Throughput_Performance  0x0026   252   252   000    Old_age   Always       -       0
+  3 Spin_Up_Time            0x0023   092   088   025    Pre-fail  Always       -       2507
+  4 Start_Stop_Count        0x0032   093   093   000    Old_age   Always       -       7932
+  5 Reallocated_Sector_Ct   0x0033   252   252   010    Pre-fail  Always       -       0
+  7 Seek_Error_Rate         0x002e   252   252   051    Old_age   Always       -       0
+  8 Seek_Time_Performance   0x0024   252   252   015    Old_age   Offline      -       0
+  9 Power_On_Hours          0x0032   100   100   000    Old_age   Always       -       10054
+ 10 Spin_Retry_Count        0x0032   252   252   051    Old_age   Always       -       0
+ 11 Calibration_Retry_Count 0x0032   100   100   000    Old_age   Always       -       812
+ 12 Power_Cycle_Count       0x0032   093   093   000    Old_age   Always       -       7942
+191 G-Sense_Error_Rate      0x0022   100   100   000    Old_age   Always       -       1877
+192 Power-Off_Retract_Count 0x0022   100   100   000    Old_age   Always       -       80
+194 Temperature_Celsius     0x0002   061   054   000    Old_age   Always       -       39 (Min/Max 11/47)
+195 Hardware_ECC_Recovered  0x003a   100   100   000    Old_age   Always       -       0
+196 Reallocated_Event_Count 0x0032   252   252   000    Old_age   Always       -       0
+197 Current_Pending_Sector  0x0032   252   100   000    Old_age   Always       -       0
+198 Offline_Uncorrectable   0x0030   252   252   000    Old_age   Offline      -       0
+199 UDMA_CRC_Error_Count    0x0036   200   200   000    Old_age   Always       -       0
+200 Multi_Zone_Error_Rate   0x002a   100   100   000    Old_age   Always       -       18856
+223 Load_Retry_Count        0x0032   100   100   000    Old_age   Always       -       812
+225 Load_Cycle_Count        0x0032   051   051   000    Old_age   Always       -       496059
+</code></pre></div></div>
+<p>A couple of comments about this, because the first time I saw “pre-fail” and “old_age” I really freaked out. It seems like those are simply the type of attribute. To me this implies that, were that attribute to attain a lower value than the threshold, it would indicate that there is a “pre-fail” about to happen, or that the drive is old and should be replaced. In this case no value is lower than the threshold, so there’s nothing to worry about. Also, the “VALUE” column uses some sort of renormalization to define a <em>score</em>, higher is always better and in most hard drives the maximum value is 253 (although some use 200 or 100). Note that “WORST” and “THRESHOLD” columns work within the same range. If you want to check the real value you need to look at the last column. For instance, there’s been 0 <em>Reallocated_Sector_Ct</em>, which results in a max score of 252.</p>
+
+          </section>
+
+          <!-- Share Buttons Start -->
+<div>
+  <ul class="rrssb-buttons clearfix">
+    
+      <li class="rrssb-email">
+        <a href="mailto:?subject=Checking%20the%20state%20of%20your%20HDD%20with%20badblocks&amp;body=http://localhost:4000http://localhost:4000/blog/tnt/2024/10/04/tnt-badblocks.html" data-proofer-ignore>
+          <span class="rrssb-icon">
+            <svg xmlns="https://www.w3.org/2000/svg" width="28" height="28" viewbox="0 0 28 28">
+              <path d="M20.11 26.147c-2.335 1.05-4.36 1.4-7.124 1.4C6.524 27.548.84 22.916.84 15.284.84 7.343 6.602.45 15.4.45c6.854 0 11.8 4.7 11.8 11.252 0 5.684-3.193 9.265-7.398 9.3-1.83 0-3.153-.934-3.347-2.997h-.077c-1.208 1.986-2.96 2.997-5.023 2.997-2.532 0-4.36-1.868-4.36-5.062 0-4.75 3.503-9.07 9.11-9.07 1.713 0 3.7.4 4.6.972l-1.17 7.203c-.387 2.298-.115 3.3 1 3.4 1.674 0 3.774-2.102 3.774-6.58 0-5.06-3.27-8.994-9.304-8.994C9.05 2.87 3.83 7.545 3.83 14.97c0 6.5 4.2 10.2 10 10.202 1.987 0 4.09-.43 5.647-1.245l.634 2.22zM16.647 10.1c-.31-.078-.7-.155-1.207-.155-2.572 0-4.596 2.53-4.596 5.53 0 1.5.7 2.4 1.9 2.4 1.44 0 2.96-1.83 3.31-4.088l.592-3.72z"></path>
+            </svg>
+          </span>
+          <span class="rrssb-text">email</span>
+        </a>
+      </li>
+    
+
+    
+      <li class="rrssb-facebook">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000http://localhost:4000/blog/tnt/2024/10/04/tnt-badblocks.html&amp;title=Checking%20the%20state%20of%20your%20HDD%20with%20badblocks" class="popup">
+          <span class="rrssb-icon">
+            <svg xmlns="https://www.w3.org/2000/svg" preserveaspectratio="xMidYMid" width="29" height="29" viewbox="0 0 29 29">
+              <path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z" class="cls-2" fill-rule="evenodd"></path>
+            </svg>
+          </span>
+          <span class="rrssb-text">facebook</span>
+        </a>
+      </li>
+    
+
+    
+      <li class="rrssb-twitter">
+        <a href="https://twitter.com/share?url=http://localhost:4000http://localhost:4000/blog/tnt/2024/10/04/tnt-badblocks.html&amp;text=Checking%20the%20state%20of%20your%20HDD%20with%20badblocks" class="popup">
+          <span class="rrssb-icon"><svg xmlns="https://www.w3.org/2000/svg" width="28" height="28" viewbox="0 0 28 28">
+              <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"></path></svg></span>
+          <span class="rrssb-text">twitter</span>
+        </a>
+      </li>
+    
+
+    
+      <li class="rrssb-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://localhost:4000http://localhost:4000/blog/tnt/2024/10/04/tnt-badblocks.html" class="popup">
+          <span class="rrssb-icon">
+            <svg xmlns="https://www.w3.org/2000/svg" width="28" height="28" viewbox="0 0 28 28">
+              <path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"></path>
+            </svg>
+          </span>
+          <span class="rrssb-text">linkedin</span>
+        </a>
+      </li>
+    
+
+    
+      <li class="rrssb-reddit">
+        <a href="https://www.reddit.com/submit?url=http://localhost:4000http://localhost:4000/blog/tnt/2024/10/04/tnt-badblocks.html&amp;title=Checking%20the%20state%20of%20your%20HDD%20with%20badblocks" target="_blank">
+          <span class="rrssb-icon">
+            <svg xmlns="https://www.w3.org/2000/svg" width="28" height="28" viewbox="0 0 28 28">
+              <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"></path>
+              <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"></path>
+            </svg>
+          </span>
+          <span class="rrssb-text">reddit</span>
+        </a>
+      </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+  </ul>
+</div>
+
+<!-- Share Buttons End -->
+ <!-- Disqus Comments Start -->
+
+
+  <div id="disqus_thread"></div>
+  <noscript>Please enable JavaScript to view the
+    <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+  </noscript>
+
+
+<!-- Disqus Comments End -->
+
+
+          <hr>
+
+          
+          <div class="author row">
+            <img class="col-xs-4 col-sm-3 col-md-2" src="http://localhost:4000/assets/img/me.png" alt="Me">
+            <p class="col-xs-8 col-sm-9 col-md-10">Javier Selva has a background of computer science and currently specializes in Machine Learning. In particular he is passionate about NLP, CV and self-supervised learning with Transformers.</p>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Start -->
+
+<footer>
+  <!-- Social Buttons Start -->
+
+<ul class="list-inline social-buttons">
+  
+    
+      <li>
+        <a href="https://twitter.com/javier_selvac" target="_blank">
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="https://github.com/javierselva" target="_blank">
+          <i class="fa-brands fa-github"></i>
+        </a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="https://www.linkedin.com/in/javier-selva-castell%C3%B3-399738134/" target="_blank">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="https://scholar.google.com/citations?user=T5-DYyUAAAAJ" target="_blank">
+          <i class="fa-brands fa-google-scholar"></i>
+        </a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="https://www.youtube.com/@javierselva509/featured" target="_blank">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+      </li>
+    
+  
+</ul>
+
+<!-- Social Buttons End -->
+
+
+  <div class="container text-center">
+    <p>Copyright © Javier Selva 2024</p>
+    <p><a href="https://github.com/le4ker/personal-jekyll-theme/" target="blank">Site's theme.</a></p>
+  </div>
+</footer>
+
+<!-- Footer End -->
+ <!-- Javascript Start -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js" integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ==" crossorigin="anonymous">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha512-oBTprMeNEKCnqfuqKd6sbvFzmFQtlXS3e0C/RGFV0hD6QzhHV+ODfaQbAlmY6/q0ubbwlAM/nCJjkrgA3waLzg==" crossorigin="anonymous">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" integrity="sha512-ahmSZKApTDNd3gVuqL5TQ3MBTj8tL5p2tYV05Xxzcfu6/ecvt1A0j6tfudSGBVuteSoTRMqMljbfdU0g2eDNUA==" crossorigin="anonymous">
+</script>
+
+<!--
+  * Start Bootstrap - Grayscale Bootstrap Theme (http://startbootstrap.com)
+  * Code licensed under the Apache License v2.0.
+  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+-->
+<script>
+  function toggleNavCollapse() {
+    50 < $(".navbar").offset().top
+      ? $(".navbar-fixed-top").addClass("top-nav-collapse")
+      : $(".navbar-fixed-top").removeClass("top-nav-collapse");
+  }
+  $(document).ready(toggleNavCollapse);
+  $(window).scroll(toggleNavCollapse);
+  $(function () {
+    $("a.page-scroll").bind("click", function (b) {
+      var a = $(this);
+      $("html, body")
+        .stop()
+        .animate(
+          { scrollTop: $(a.attr("href")).offset().top - 50 },
+          1500,
+          "easeInOutExpo",
+          function () {
+            a.blur();
+          },
+        );
+      b.preventDefault();
+    });
+  });
+  $(".navbar-collapse ul li a").click(function () {
+    $(".navbar-toggle:visible").click();
+  });
+</script>
+
+
+
+
+
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<!--
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script” async src=”https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+-->
+
+
+ 
+
+   
+
+  
+
+
+
+<!-- Javascript End -->
+
+  </body>
+</html><!-- Post Layout End -->

@@ -7,6 +7,34 @@
 		<atom:link href="http://localhost:4000http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>Checking the state of your HDD with badblocks</title>
+				
+				
+					<description>&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;Since I had an hdd scare and almost lost all of my childhood pictures I started taking backups and disk status seriously. There are many ways to do this. You can pay for cloud storage and let professionals handle it. Or if you’re feeling techie you can set up some raid build so your data replicates automatically. But if like me you’re on a budget, the easiest way I’ve found is to manually hold several copies in different hard drives, and ideally have them in different places.&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Fri, 04 Oct 2024 00:00:00 +0200</pubDate>
+				<link>http://localhost:4000http://localhost:4000/blog/tnt/2024/10/04/tnt-badblocks.html</link>
+				<guid isPermaLink="true">http://localhost:4000http://localhost:4000/blog/tnt/2024/10/04/tnt-badblocks.html</guid>
+			</item>
+		
+			<item>
+				<title>I-JEPA: Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture</title>
+				
+				
+					<description>&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;When LeCun first published his vision of how an embodied agent should function in the world I was excited. It is always nice to escape briefly into reading a little bit of theories and hypothesis on how things should work. It is important, I believe, to take a step back and make sure we’re still going in the direction we wish to follow, instead of banging our heads blindly against the next engeneering problem.&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Fri, 27 Sep 2024 00:00:00 +0200</pubDate>
+				<link>http://localhost:4000http://localhost:4000/blog/paper-summary/2024/09/27/psum-IJEPA.html</link>
+				<guid isPermaLink="true">http://localhost:4000http://localhost:4000/blog/paper-summary/2024/09/27/psum-IJEPA.html</guid>
+			</item>
+		
+			<item>
 				<title>Using regex to replace multiple instances.</title>
 				
 				
@@ -109,18 +137,6 @@
 				<pubDate>Fri, 01 Jun 2018 00:00:00 +0200</pubDate>
 				<link>http://localhost:4000http://localhost:4000/publications/2018/06/01/gaze.html</link>
 				<guid isPermaLink="true">http://localhost:4000http://localhost:4000/publications/2018/06/01/gaze.html</guid>
-			</item>
-		
-			<item>
-				<title>Folded Recurrent Neural Networks for Future Video Prediction</title>
-				
-				
-					<description>&lt;p&gt;This work introduces double-mapping Gated Recurrent Units (dGRU), an extension of standard GRUs where the input is considered as a recurrent state. An extra set of logic gates is added to update the input given the output. Stacking multiple such layers results in a recurrent auto-encoder: the operators updating the outputs comprise the encoder, while the ones updating the inputs from the decoder. Since the states are shared between the corresponding encoder and decoder layers, the representation is stratified during learning: some information is not passed to the next layers.&lt;/p&gt;
-</description>
-				
-				<pubDate>Mon, 01 Jan 2018 00:00:00 +0100</pubDate>
-				<link>http://localhost:4000http://localhost:4000/publications/2018/01/01/frnn.html</link>
-				<guid isPermaLink="true">http://localhost:4000http://localhost:4000/publications/2018/01/01/frnn.html</guid>
 			</item>
 		
 	</channel>
