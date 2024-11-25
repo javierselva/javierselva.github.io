@@ -7,6 +7,19 @@
 		<atom:link href="http://localhost:4000http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>Setting up GitHub Authentication tokens</title>
+				
+				
+					<description>&lt;p&gt;Github tokens are used as a safety measure to connect to repos within your github account. It also allows you to push and pull without the need to write your password or storing it anywhere. Making it a commodity and also a safety feature.&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Fri, 18 Oct 2024 00:00:00 +0200</pubDate>
+				<link>http://localhost:4000http://localhost:4000/blog/tnt/2024/10/18/tnt-git_auth.html</link>
+				<guid isPermaLink="true">http://localhost:4000http://localhost:4000/blog/tnt/2024/10/18/tnt-git_auth.html</guid>
+			</item>
+		
+			<item>
 				<title>Checking the state of your HDD with badblocks</title>
 				
 				
@@ -125,18 +138,6 @@
 				<pubDate>Fri, 01 Jan 2021 00:00:00 +0100</pubDate>
 				<link>http://localhost:4000http://localhost:4000/publications/publication/2021/01/01/udiva.html</link>
 				<guid isPermaLink="true">http://localhost:4000http://localhost:4000/publications/publication/2021/01/01/udiva.html</guid>
-			</item>
-		
-			<item>
-				<title>Recurrent CNN for 3D Gaze Estimation using Appearance and Shape Cues</title>
-				
-				
-					<description>&lt;p&gt;In this paper, we tackle the problem of person- and head pose-independent 3D gaze estimation from remote cameras, using a multi-modal recurrent convolutional neural network (CNN). We propose to combine face, eyes region, and face landmarks as individual streams in a CNN to estimate gaze in still images. Then, we exploit the dynamic nature of gaze by feeding the learned features of all the frames in a sequence to a many-to-one recurrent module that predicts the 3D gaze vector of the last frame.&lt;/p&gt;
-</description>
-				
-				<pubDate>Fri, 01 Jun 2018 00:00:00 +0200</pubDate>
-				<link>http://localhost:4000http://localhost:4000/publications/2018/06/01/gaze.html</link>
-				<guid isPermaLink="true">http://localhost:4000http://localhost:4000/publications/2018/06/01/gaze.html</guid>
 			</item>
 		
 	</channel>
