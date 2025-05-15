@@ -88,13 +88,66 @@ So, we've all heard of accuracy. It will tell us how many times the model was co
 
 Acording to this (https://en.wikipedia.org/wiki/Accuracy_and_precision) we can use precission, which, as I understand it, is how sure the model was when making those predictions. So, in a classification problem, precission would be the certainty on that prediction. If argmax gives us the class, max would be the precission on predicting that class. It is not the same if the model was 90% sure it was a dog, and all other classes had like 1%, than if the model was 34% sure it was a dog and 31% sure it was a cat. Do not confuse this definition of precission with the one used in retrieval (where you check precission and recall.) In this sense, Accuracy is the ratio of correctly labeled samples by all samples.
 
-Now, while precission and recall can be used for binary classification (and can be computed per-class in multi-class problems, and latter aggregated as a single statistic of the model). Computing TP, TN, FP, and FN is called a confusion matrix. With these values you can the compute Precission = TP / (TP + FP) (How many of the ones I clasiffied as "positive" are actually positive) and Recall = TP / (TP + FN) (How many of the positives did I actually get).
+Now, while precission and recall can be used for binary classification (and can be computed per-class in multi-class problems, and latter aggregated as a single statistic of the model), it's traditionally something from retreival. Computing TP, TN, FP, and FN is called a confusion matrix. With these values you can the compute Precission = TP / (TP + FP) (How many of the ones I clasiffied as "positive" are actually positive) and Recall = TP / (TP + FN) (How many of the positives did I actually get).
 
 Finally, we've got the F1-socre, which computes the harmonic mean (??) of precission and recall. F1 = 2\*(P\*R / P+R)
 
 Accuracy (TP + TN / TP + TN + FP + FN) may have undesirable effects as it aggregates too much information. For example, if the dataset is unbalanced, a model that always predicts the majority class will still be mostly accurate. There are alternatives that balance the TP and TN depending on the number of samples per class bAcc = (TPR + TNR)/2... I could keep going, but https://en.wikipedia.org/wiki/Precision_and_recall already has a very complete table of metrics.
 
 Apparently you can choose one metric or another depending on the cost of FP and FN. If one is more costly than the other, some metrics can be better indicative is the model is good or not. 
+
+*******
+Ok, let's see, I've started to ckech these kind of metrics for Anomaly Detection and I've gone down a heavy spiral. I think any metrics for binary classification can be used in this case, and it's the same for retreival (in the end, could be seen as clasifying a sample as relevant/irrelevant for a given query). In particular, I was trying to understand ROC https://en.wikipedia.org/wiki/Receiver_operating_characteristic, which is a measure for AD. And I found the same huge table as in the Precission/Recall article I linked above.
+
+Let's start by the null-hypothesis (https://en.wikipedia.org/wiki/Null_hypothesis).
+
+The null-hypothesis is the default hypothesis (i.e., the condition is not met, there is not a relationship, etc.). In anomaly detection, the null-hypothesis is that the sample is normal. In retrieval, the sample is not relevant. The sample does not belong to the class. The set of samples that satisfy the null-hypothesis are the "negatives" (meaning that they **do not** satisfy the condition, relationship, etc. stablished by the *alternative* hypothesis). The alternative hypothesis states that the sample satisfies a condition (e.g., to be retrieved, to belong to a given class, or have some anomaly present). A sample that satisfies the alternative hypothesis is hence dubbed a positive sample.
+
+I think all of this is a bit confusing because of the use of null, reject, negations etc.
+A couple of examples. In medicine, if you're testing for an illness, a positive result means that, indeed, the condition (presence of the virus) is satisfied. So a positive results indicates that the person is unhealty. Which is a bit counterintuitive if you look at health, but it makes a lot of sense if you look at it from the perspective of the test: to pass the test, the virus must be present. In other words: null-hypothesis, healthy individual, **non**-presence of virus, a sample which satisfies this is a *negative* sample because it does **not** pass the "virus-presence test"; alternative hypothesis, unhealty individual, presence of virus, a sample which satisfies this is a *positive* sample because it does pass the "virus-presence test".
+
+In court, the null-hypothesis is that "someone is inocent (-until proven guilty"). The alternative hypothesis to be proved is that the person is indeed guilty. The test here is "is the person guilty?". If the test is passed (*positive*), the person is guilty (which sounds negative in a laymans view, but again, it's positive in relation to the test), and the null-hypothesis is rejected. If the test fails (*negative*), the person is innocent, meaning that the null-hypothesis is accepted.
+
+In this context we have two types of errors (https://en.wikipedia.org/wiki/Type_I_and_type_II_errors):
+ - Type I error: reject null-hypothesis by mistake.
+ - Type II error: accept null-hypothesis by mistake.
+
+The key idea for understanding these errors is not from accepting one or the other hypotheses, but looking at it from the null-hypothesis alone (accepted/rejected), and assuming that the alternative one is rejected/accepted by default.
+
+However, if we want to look at it from the context of True/False Positive and True/False negative, we're looking at it from the point of the test, i.e., the alternative hypothesis. So we're looking at it the other way around, which makes it confusing (at least for me).
+
+The set of positive samples is formed by all those in which the test should pass, and really AH is correct (i.e., NH should be rejected, e.g., anomaly, valid retrieved document, correctly identified as belonging to a class...):
+  1. (TP) AH correctly accepted --> True Positive (i.e., NH correctly rejected)
+  2. (FN) AH incorrectly rejected --> False Negative (i.e., NH incorrectly accepted)
+
+The set of negative samples is formed by all those in which the test fails, and really AH is incorrect (i.e., NH should be accepted, e.g., normal sample, do not retrieve the document, identified as not belonging to a class...):
+  1. (TN) AH correctly rejected --> True Negative (i.e., NH correctly accepted)
+  2. (FP) AH incorrectly accepted --> False Positive (i.e., NH incorrectly rejected)
+
+Now, whith all this in mind, let's take a look at the most common metrics in this context (look at the chart of metrics I linked above for reference, and many MANY more metrics):
+
+ - **True Positive Rate** (Recall, or Sensitivity): TP / (TP + FN). Ratio between identified positives and all real positives (e.g., identified anomalies divided by all anomalies). It's the conditional probability of passing the test, given that the true condition is positive. Recall: In the context of retrieval, how many of the ones I should bring I am capable of actually retrieving/recalling. Sensitivity: How sensitive is my test, if it's 100% sensitive it means I do not leave any samples which satisfy the condition out. Meaning that if the sample fails the test, I can confidently reject it. A test with a higher sensitivity has a lower type II error rate. 
+ - **True Negative Rate** (Specificity): TN / (TN + FP). Ratio between identified negatives and all real negatives (e.g, identified as not anomalies (i.e., identified normal samples) divided by all normal samples). It's the conditional probability of failing the test, given that the true condition is negative. Specificity: How specific my test is, if it's 100%, it means all samples that do not satisfy the condition will be correctly rejected. Meaning that if the sample passes the test, I can confidently accept it. A test with a higher specificity has a lower type I error rate. 
+ - **False Negative Rate** (Miss rate, or Type II): FN / (FN + TP). Ratio between the ones that falsely fail and all which pass the test. It's the conditional probability of failing the test, given that the true condition is positive (i.e., probability of falsely rejecting the alternative hypotesis or, in other words, accepting the null-hypothesis).
+ - **False Positive Rate** (False alarm, fall-out, or Type I): FP / (FP + TN). Ratio between the ones that falsely pass the test and all which fail the test. It's the conditional probability of passing the test, given that the true condition is negative (i.e, probability of falsely accepting the alternative hypothesis or, in other words, rejecting the null-hypothesis).
+ - **Accuracy**:
+ - **Precission**:
+
+Now for the cherry on top. In the context of anomaly detection (and I'm sure, other places), a metric noted as Receiver Operatinc Characteristic (https://en.wikipedia.org/wiki/Receiver_operating_characteristic) is used. Instead of measuring a single value, it is based on a set of thresholds. In order to consider a specific result Positive or Negative, one must use a threshold (e.g., a network outputs the probability that a sample is anomalous (in my current context), or that it's relevant for a query in the context of retrieval). 
+
+From the wikipedia article:
+ ```
+ To draw a ROC curve, only the true positive rate (TPR) and false positive rate (FPR) are needed (as functions of some classifier parameter). The TPR defines how many correct positive results occur among all positive samples available during the test. FPR, on the other hand, defines how many incorrect positive results occur among all negative samples available during the test. A ROC space is defined by FPR and TPR as x and y axes, respectively, which depicts relative trade-offs between true positive (benefits) and false positive (costs).
+ ```
+
+By sliding the threshold one should be able to achieve all possible values for both TPR and FPR. The relation between the two by the given model will draw a specific curve. In general, the higher the area under the curve, the better the model.
+
+See also:
+ - https://en.wikipedia.org/wiki/Sensitivity_and_specificity
+ - https://en.wikipedia.org/wiki/Precision_and_recall
+ - https://en.wikipedia.org/wiki/Evaluation_measures_(information_retrieval)#Fall-out
+ - https://en.wikipedia.org/wiki/False_positives_and_false_negatives#false_negative_rate
+ - https://en.wikipedia.org/wiki/False_positive_rate
 
 # How to deal with an imbalanced data set
 https://medium.com/game-of-bits/how-to-deal-with-imbalanced-data-in-classification-bd03cfc66066
@@ -318,6 +371,9 @@ The Frobenius norm is the Euclidean norm but for matrices. It's the square root 
 
 # “how would you explain to an engineer how to interpret a p-value?”
 
+# What is Layer Norm and how does it work? How is it different to BatchNorm? Which other normalizations are out there?
+
+https://user-images.githubusercontent.com/76557164/176494819-d7be7cd7-a181-417b-aeee-b197c86a2a18.png
 
 CODING QUESTION
 
